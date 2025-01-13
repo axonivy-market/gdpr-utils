@@ -1,0 +1,6 @@
+DataDeletionData #class
+com.axonivy.utils.gdprconnector #namespace
+task com.axonivy.utils.gdprconnector.model.Task #field
+task PERSISTENT #fieldModifier
+financialDataDeletionId String #field
+financialDataDeletionId PERSISTENT #fieldModifier

@@ -1,0 +1,107 @@
+Dialogs:
+  com:
+    axonivy:
+      utils:
+        gdprconnector:
+          DataDeletion:
+            AffectedCaseDetailMessage: User data deleted for all connected tasks due to data deletion requirements in Germany
+            ConfirmDeleteDataMessage: Click delete to confirm data deletion.
+            DataDeletionCompletedHelpText: User data deleted from {0} tasks in {1} cases due to German data deletion requirements. Please see details in the Case Details - Business Details of this case
+            DataDeletionIsCompleted: <b>Click finish to complete the data deletion task.</b>
+            DataDeletionResult: Results of GDPR Data deletion
+            DataDeletionStatus: Data Deletion status
+            DeletedCaseNoteMessage: User data deleted from tasks {0} due to German data deletion requirements
+            DeletingHelpText: The data from the following period will be deleted.
+            DeletionResult:
+              CaseNumber: Case Number
+              NumberOfCasesProsessed: 'Number of cases processed:'
+              NumberOfTasksProcessed: 'Number of tasks processed:'
+              PleaseSelectFinancialYear: 'Please select Financial Year:'
+              Result: Result
+              TaskNumber: Task Number
+            DeletionWarningNote: <p><span class="warning-letter">WARNING:</span> Once you press the submit button, there is no going back, the data will be irrevocably deleted. Please be certain.</p>
+            FinancialRange: From {0} to {1}
+            HelpText: The annual data deletion is required in accordance with the German GDPR regulations.
+            PleaseDoNotCloseTask: Please do not close this task while data is still being processed.
+            PleaseSelectFinancialYear: Please select Financial Year
+            ProcessStatusMessage:
+              CheckAndDeleteEntities: Checking and deleting entities
+              CouldNotDelete: Could not delete
+              DataDeleted: Data deleted
+              DeletedEntitiesInDB: Deleted [{0}] entities in Database
+              DeletingEntity: Deleting {0} {1}
+              DestroyedCase: Destroyed case [{0}] {1}
+              FindingCasesOfFinancialYear: Finding all cases of financial year {0} from {1} to {2}
+              Finished: Finished
+              NoDataToDelete: No data to delete
+              StartProcess: Start process
+            StartDeletingData: Start deleting data
+            TimePeriod: Time Period
+Labels:
+  AccessLevel: Access level
+  Actions: Actions
+  Add: Add
+  Applicants: Applicants
+  BusinessCaseDetails: Business case details
+  Cancel: Cancel
+  Close: Close
+  Comment: Comment
+  Comments: Comments
+  CompanyCar: Company car
+  Confirmation: Confirmation
+  ConfirmationHeaderText: Are you sure?
+  Continue: Continue
+  CounterTemplate: '{0} characters remaining.'
+  Creator: Creator
+  Date: Date
+  DatePattern: dd/MM/yyyy
+  DateTimePattern: dd/MM/yyyy HH:mm
+  DelegatedMessage: The task was delegated to
+  Delete: Delete
+  DiscardDraft: Discard draft
+  DocumentType: Document Type
+  DocumentTypeAndAccessLevelAreRequired: Document Type and Access Level are required
+  Download: Download
+  Edit: Edit
+  Email: Email
+  Export: Export
+  ExtractLovErrorMessage: 'Extracted from lov id: {0} but value is empty.'
+  Finish: Finish
+  GrowlForRequireField: Some mandatory fields or preconditions are missing, please check.
+  InactiveUserHelperText: (inactive)
+  InvalidEmailMessage: Email format is incorrect
+  InvalidVersionId: Invalid version ID
+  LegalEntity: Legal Entity
+  'No': 'No'
+  NoName: No name
+  NoPermisson: You do not have permission to view this page.
+  NoRecordsFound: No records found.
+  NoSelections: No selections
+  NotAvailable: N/A
+  OK: OK
+  PleaseConfirm: Please confirm
+  PleaseSelect: Please select
+  PositionCode: Position code
+  ReportsToPosition: Reports to position
+  RequiredAttachmentMessage: This field is required at least {0} files
+  RequiredFieldMessage: This field is required
+  ReturnToDashboard: Return to dashboard
+  Save: Save
+  SaveAsDraft: Save as draft
+  Select: Select
+  Submit: Submit
+  View: View
+  WrongDateFormat: Please enter valid date.
+  'Yes': 'Yes'
+Processes:
+  DataDeletion:
+    Cases:
+      GermanyDataDeletion:
+        description: Deletes user data for GDPR puurposes
+        name: Germany Data Deletion process for {0}
+    Tasks:
+      GermanyDataDeletion:
+        description: Allows the user to determine dates in which user data must be deleted and deletes it.
+        name: Germany Data Deletion task
+    description: Automated process that starts automatically once a year and and creates a user task. The user can then determine the dates for which data should be deleted. The data is then deleted by an automatic function.
+    name: Germany Data Deletion process

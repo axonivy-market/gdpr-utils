@@ -1,0 +1,80 @@
+package com.axonivy.utils.gdprconnector.enums;
+
+public enum IPeopleField {
+	EXTERNAL_CODE("externalCode"),
+	NAME("name"),
+	FORMAL_NAME("formalName"),
+	FIRST_NAME("firstName"),
+	LAST_NAME("lastName"),
+	SECOND_LAST_NAME("secondLastName"),
+	EMAIL_ADDRESS("emailAddress"),
+	IS_PRIMARY("isPrimary"),
+	CREATED("createdOn"),
+	PERSON_ID_EXTERNAL("personIdExternal"),
+	USERID("userId"),
+	JOB_CODE("jobCode"),
+	JOB_TITLE("jobTitle"),
+	SEQ_NUMBER("seqNumber"),
+	STATUS("status"),
+	STANDARD_HOURS("standardHours"),
+	TARGET_FTE("targetFTE"),
+	FTE("fte"),
+	WORKINGDAYS_PER_WEEK("workingDaysPerWeek"),
+	CONTRACT_END_DATE("contractEndDate"),
+	PROBATION_END_DATE("probationPeriodEndDate"),
+	OPTION_ID("optionId"), LABEL("label"), LOCALE("locale"), ID("id"), PICKLIST_OPTION("picklistOption"),
+	PICKLIST("picklist"), PICKLIST_ID("picklistId"), TERRITORY_CODE("territoryCode"), TERRITORY_NAME("territoryName"),
+	CODE("code"), EXTERNAL_NAME_DEFAULT("externalName_defaultValue"), VALUE("value"), EN_GB("en_GB"),
+	HR("hr"), MATRIX_MANAGER("matrixManager"), PICKLIST_LABEL("picklistLabels"), EXTERNAL_NAME("externalName"),
+	LEGAL_ENTITY("cust_LegalEntity_to_PYCtrlArea"), POSITION("position"), POSITION_TITLE("positionTitle"),
+	PARENT_POSITION("parentPosition"),
+	EFFECTIVE_START_DATE("effectiveStartDate"), EFFECTIVE_STATUS("effectiveStatus"), CUST_PAYROLL_COST_CENTER("cust_PayrollCostCenter"),
+	END_DATE("endDate"),
+	OK_TO_REHIRE("okToRehire"), LAST_DATE_WORKED("lastDateWorked"), COMPANY("company"),
+	DEFAULT_FULL_NAME("defaultFullName"), PERSON_ID("personId"), START_DATE("startDate"),
+	EMAIL("email"), MANAGER_ID("managerId"), DISPLAY_NAME("displayName"), NAME_LOCALIZED("name_localized"),
+	USERNAME("username"), NATIONAL_ID("nationalId"), ISSUE_DATE("issueDate"), DOCUMENT_NUMBER("documentNumber"),
+	DOCUMENT_TITLE("documentTitle"), EXPIRATION_DATE("expirationDate"), ISSUE_PLACE("issuePlace"),
+	ISSUING_AUTHORITY("issuingAuthority"), IS_VALIDATED("isValidated"),
+	CUST_GLOBAL_COST_CENTER("cust_GlobalCostCenter"), CUST_BRANCH_CODE("cust_BranchCode"), EVENT_REASON("eventReason"),
+	SALUTATION("salutation"), CUSTOM_STRING_94("customString94"), CUSTOM_DATE_1("customDate1"),
+	CUSTOM_DATE_2("customDate2"), CUSTOM_DATE_11("customDate11"),
+	EXTERNAL_NAME_LOCALIZED("externalName_localized"),
+	CUST_TO_LEGAL_ENTITY("cust_toLegalEntity"), CUST_TO_PERSONNEL_AREA("cust_ToPersonnelArea"),
+	COUNTRY("country"), LABEL_LOCALIZED("label_localized"), PICKLIST_V2_ID("PickListV2_id"),
+	EXTERNALNAME_DEFAULTVALUE("externalName_defaultValue"), PARENT_PICKLIST_OPTION("parentPicklistOption"),
+	PARENT_PICKLIST_VALUE("parentPickListValue"), LABEL_FI_FI("label_fi_FI"), LABEL_SV_SE("label_sv_SE"),
+	LABEL_NL_NL("label_nl_NL"), LABEL_DA_DK("label_da_DK"), LABEL_DE_DE("label_de_DE"), LABEL_ES_ES("label_es_ES"),
+	LABEL_PL_PL("label_pl_PL"), LABEL_PT_PT("label_pt_PT"), LABEL_IT_IT("label_it_IT"), LABEL_FR_FR("label_fr_FR"),
+	LABEL_DE_CH("label_de_CH"), LABEL_EN_GB("label_en_GB"), LABEL_NB_NO("label_nb_NO"), LABEL_HU_HU("label_hu_HU"),
+	LABEL_DEFAULT("label_defaultValue"), NAME_FI_FI("name_fi_FI"), NAME_SV_SE("name_sv_SE"), NAME_NL_NL("name_nl_NL"),
+	NAME_DA_DK("name_da_DK"), NAME_DE_DE("name_de_DE"), NAME_ES_ES("name_es_ES"), NAME_PL_PL("name_pl_PL"),
+	NAME_PT_PT("name_pt_PT"), NAME_IT_IT("name_it_IT"), NAME_FR_FR("name_fr_FR"), NAME_DE_CH("name_de_CH"),
+	NAME_EN_GB("name_en_GB"), NAME_NB_NO("name_nb_NO"), NAME_HU_HU("name_hu_HU"), NAME_DEFAULT("name_defaultValue"),
+	NAME_SK_SK("name_sk_SK"), NAME_CS_CZ("name_cs_CZ"),
+	CUSTOM_05("custom05"),
+	EXTERNAL_NAME_FR_FR("externalName_fr_FR"), EXTERNAL_NAME_HU_HU("externalName_hu_HU"),EXTERNAL_NAME_EN_GB("externalName_en_GB"),
+	EXTERNAL_NAME_NL_NL("externalName_nl_NL"),EXTERNAL_NAME_SK_SK("externalName_sk_SK"),EXTERNAL_NAME_CS_CZ("externalName_cs_CZ"),
+	EXTERNAL_NAME_SV_SE("externalName_sv_SE"),EXTERNAL_NAME_DA_DK("externalName_da_DK"),EXTERNAL_NAME_FI_FI("externalName_fi_FI"),
+	EXTERNAL_NAME_PT_PT("externalName_pt_PT"),EXTERNAL_NAME_PL_PL("externalName_pl_PL"),EXTERNAL_NAME_NB_NO("externalName_nb_NO"),
+	EXTERNAL_NAME_ES_ES("externalName_es_ES"),EXTERNAL_NAME_DE_CH("externalName_de_CH"),EXTERNAL_NAME_IT_IT("externalName_it_IT"),
+	EXTERNAL_NAME_DE_DE("externalName_de_DE"),
+	RELATIONSHIP_TYPE("relationshipType"), REL_USER("relUserId"),
+	EMPINFO_PERSON_ID_EXTERNAL("empInfo/personIdExternal"), CUSTOM_STRING_37("customString37"),
+	IS_COMPETITION_CLAUSE_ACTIVE("isCompetitionClauseActive"),
+	CUST_DEPARTMENT("cust_Department"),
+	CUST_SECTION_1("cust_Section1"),
+	CUST_SECTION_2("cust_Section2"),
+	CUST_SECTION_3("cust_Section3"),
+	COST_CENTER("costCenter");
+
+	private String name;
+
+	private IPeopleField(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+}
