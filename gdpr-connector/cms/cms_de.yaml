@@ -1,42 +1,44 @@
+Categories:
+  dataDeletion:
+    name: Data Protection
 Dialogs:
   com:
     axonivy:
       utils:
-        gdprconnector:
-          DataDeletion:
-            AffectedCaseDetailMessage: Löschung der Benutzerdaten für alle damit verbundenen Aufgaben aufgrund der Löschpflicht in Deutschland
-            ConfirmDeleteDataMessage: Klicken Sie auf „Löschen“, um die Datenlöschung zu bestätigen.
-            DataDeletionCompletedHelpText: Benutzerdaten wurden aufgrund deutscher Anforderungen zur Datenlöschung aus {0} Aufgaben in {1} Fällen gelöscht. Einzelheiten finden Sie in den Falldetails - Geschäftsdetails dieses Falls.
-            DataDeletionIsCompleted: <b>Click finish to complete the data deletion task.</b>
-            DataDeletionResult: Ergebnisse der DSGVO-Datenlöschung
-            DataDeletionStatus: Status der Datenlöschung
-            DeletedCaseNoteMessage: Aufgrund deutscher Anforderungen zur Datenlöschung wurden Benutzerdaten aus Aufgaben {0} gelöscht
-            DeletingHelpText: Die Daten aus dem darauffolgenden Zeitraum werden gelöscht.
-            DeletionResult:
-              CaseNumber: Fallnummer
-              NumberOfCasesProsessed: 'Anzahl der bearbeiteten Fälle:'
-              NumberOfTasksProcessed: 'Anzahl der bearbeiteten Aufgaben:'
-              PleaseSelectFinancialYear: 'Bitte Geschäftsjahr auswählen:'
-              Result: Ergebnis
-              TaskNumber: Aufgabennummer
-            DeletionWarningNote: <p><span class="warning-letter">WARNUNG:</span>Durch Klicken auf „Senden“ werden die Daten gelöscht und können nicht rückgängig gemacht werden.</p>/
-            FinancialRange: Von {0} bis {1}
-            HelpText: Gemäß den deutschen DSGVO-Vorschriften ist eine jährliche Datenlöschung erforderlich.
-            PleaseDoNotCloseTask: Bitte schließen Sie diese Aufgabe nicht, solange die Daten noch verarbeitet werden.
-            PleaseSelectFinancialYear: Bitte wählen Sie das Geschäftsjahr
-            ProcessStatusMessage:
-              CheckAndDeleteEntities: Prüfen und Löschen von Einheiten
-              CouldNotDelete: Löschen nicht möglich
-              DataDeleted: Daten gelöscht
-              DeletedEntitiesInDB: Gelöschte [{0}] Einheiten in der Datenbank
-              DeletingEntity: Löschen von {0} {1}
-              DestroyedCase: Vernichteter Fall [{0}] {1}
-              FindingCasesOfFinancialYear: Suche nach allen Fällen des Geschäftsjahres {0} von {1} bis {2}
-              Finished: Fertig
-              NoDataToDelete: Keine Daten zum Löschen
-              StartProcess: Prozess starten
-            StartDeletingData: Mit dem Löschen von Daten beginnen
-            TimePeriod: Zeitraum
+        gdpr:
+          AffectedCaseDetailMessage: Löschung der Benutzerdaten für alle damit verbundenen Aufgaben aufgrund der Löschpflicht in Deutschland
+          ConfirmDeleteDataMessage: Klicken Sie auf „Löschen“, um die Datenlöschung zu bestätigen.
+          DataDeletionCompletedHelpText: Benutzerdaten aus {0} Aufgaben in {1} Fällen aufgrund der Anforderungen der Datenschutzgrundverordnung gelöscht. Einzelheiten finden Sie in den Falldetails - Geschäftsdetails zu diesem Fall
+          DataDeletionIsCompleted: <b>Click finish to complete the data deletion task.</b>
+          DataDeletionResult: Ergebnisse der DSGVO-Datenlöschung
+          DataDeletionStatus: Status der Datenlöschung
+          DeletedCaseNoteMessage: Aufgrund deutscher Anforderungen zur Datenlöschung wurden Benutzerdaten aus Aufgaben {0} gelöscht
+          DeletingHelpText: Die Daten aus dem darauffolgenden Zeitraum werden gelöscht.
+          DeletionResult:
+            CaseNumber: Fallnummer
+            NumberOfCasesProsessed: 'Anzahl der bearbeiteten Fälle:'
+            NumberOfTasksProcessed: 'Anzahl der bearbeiteten Aufgaben:'
+            PleaseSelectFinancialYear: 'Bitte Geschäftsjahr auswählen:'
+            Result: Ergebnis
+            TaskNumber: Aufgabennummer
+          DeletionWarningNote: Durch Klicken auf „Senden“ werden die Daten gelöscht und können nicht rückgängig gemacht werden.
+          FinancialRange: Von {0} bis {1}
+          HelpText: Gemäß den deutschen DSGVO-Vorschriften ist eine jährliche Datenlöschung erforderlich.
+          PleaseDoNotCloseTask: Bitte schließen Sie diese Aufgabe nicht, solange die Daten noch verarbeitet werden.
+          PleaseSelectFinancialYear: Bitte wählen Sie das Geschäftsjahr
+          ProcessStatusMessage:
+            CheckAndDeleteEntities: Prüfen und Löschen von Einheiten
+            CouldNotDelete: Löschen nicht möglich
+            DataDeleted: Daten gelöscht
+            DeletedEntitiesInDB: Gelöschte [{0}] Einheiten in der Datenbank
+            DeletingEntity: Löschen von {0} {1}
+            DestroyedCase: Vernichteter Fall [{0}] {1}
+            FindingCasesOfFinancialYear: Suche nach allen Fällen des Geschäftsjahres {0} von {1} bis {2}
+            Finished: Fertig
+            NoDataToDelete: Keine Daten zum Löschen
+            StartProcess: Prozess starten
+          StartDeletingData: Mit dem Löschen von Daten beginnen
+          TimePeriod: Zeitraum
 Labels:
   AccessLevel: Zugriffsebene
   Actions: Aktionen
@@ -91,6 +93,7 @@ Labels:
   Select: Wählen
   Submit: Einreichen
   View: Ansehen
+  Warning: WARNUNG
   WrongDateFormat: Bitte geben Sie ein gültiges Datum ein.
   'Yes': Ja
 Processes:
@@ -98,10 +101,10 @@ Processes:
     Cases:
       GermanyDataDeletion:
         description: Löscht Benutzerdaten für DSGVO-Zwecke
-        name: Datenlöschprozess Deutschland für {0}
+        name: Verfahren der Allgemeinen Datenschutzverordnung für {0}
     Tasks:
       GermanyDataDeletion:
         description: Ermöglicht dem Benutzer, Termine festzulegen, an denen Benutzerdaten gelöscht werden müssen, und löscht diese.
-        name: Aufgabe zur Datenlöschung in Deutschland
+        name: Aufgabe der allgemeinen Datenschutzverordnung
     description: Automatisierter Prozess, der einmal jährlich automatisch startet und eine Benutzeraufgabe erstellt. Der Benutzer kann dann die Termine bestimmen, zu denen Daten gelöscht werden sollen. Die Daten werden dann durch eine automatische Funktion gelöscht.
-    name: Datenlöschprozess Deutschland
+    name: Manuelle Auslösung des Prozesses der Allgemeinen Datenschutzverordnung

@@ -5,8 +5,6 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 
-<h:outputStylesheet name="layouts/styles/core.css" />
-
 <p:dialog widgetVar="#{widgetVar}" id="#{not empty id? id : widgetVar}"
 	modal="true" closable="#{not empty closeable? closeable : 'false'}"
 	closeOnEscape="#{not empty closeOnEscape ? closeOnEscape : 'true'}"
@@ -17,7 +15,7 @@
 	dynamic="#{not empty dynamic ? dynamic : 'false'}" resizable="false"
 	appendTo="#{not empty appendTo ? appendTo : ''}">
 
-	<div class="p-text-center">
+	<div class="text-center">
 		<i
 			class="#{not empty iconClass ? iconClass : 'si si-information-circle'} #{not empty iconStyleClass? iconStyleClass : 'dialog-warning-icon'} dialog-icon" />
 		<h2>#{not empty headerText? headerText :
@@ -27,7 +25,7 @@
 	<ui:insert name="dialogContentSection" />
 
 	<h:panelGroup layout="block" rendered="#{not empty dialogContent}"
-		class="#{not empty dialogContentStyleClass? dialogContentStyleClass : 'p-text-center p-my-4'}">
+		class="#{not empty dialogContentStyleClass? dialogContentStyleClass : 'text-center my-4'}">
 		<h:outputText value="#{dialogContent}" escape="false" />
 	</h:panelGroup>
 

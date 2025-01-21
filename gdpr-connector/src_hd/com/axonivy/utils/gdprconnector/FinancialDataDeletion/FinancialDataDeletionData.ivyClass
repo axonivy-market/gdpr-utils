@@ -1,4 +1,0 @@
-FinancialDataDeletionData #class
-com.axonivy.utils.gdprconnector.FinancialDataDeletion #namespace
-financialDataDeletionId String #field
-financialDataDeletionId PERSISTENT #fieldModifier
