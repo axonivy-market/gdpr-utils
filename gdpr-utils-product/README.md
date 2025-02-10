@@ -1,8 +1,8 @@
 # GDPR Utils
 
-***For the [Data Protection Laws of the World](https://www.dlapiperdataprotection.com), we introduced the GDPR utils.***
+### For the [Data Protection Laws of the World](https://www.dlapiperdataprotection.com), we introduced the GDPR utils.
 
-* A CronJob has been defined as reminding the responsible for data deletion: A task is created with the option to choose a time interval and delete the user-related data in this time interval by activating the ****OK**** button (we did not implement this step automatically which would implemented with the case - to guarantee that the responsible is aware of this data deletion step).
+* A CronJob has been defined as reminding the responsible for data deletion: A task is created with the option to choose a time interval and delete the user-related data in this time interval by activating the **OK** button (we did not implement this step automatically which would implemented with the case - to guarantee that the responsible is aware of this data deletion step).
 * A couple of variables define to support define which when data can be deleted: i.e., what time interval is the earliest possible, if cases that have not been finished yet should be included, and some others.
 
 * Handling business cases with deleted data: it is shown that the corresponding tasks are destroyed and data deleted.
@@ -11,7 +11,7 @@
 
 ## Demo
 
-**Executing the General Data Protection Regulation process**
+### Executing the General Data Protection Regulation process
 
 This section creates dummy data for presenting how the `Financial Data` will be deleted.
 
@@ -26,7 +26,7 @@ This section creates dummy data for presenting how the `Financial Data` will be 
   
   ![data-deletion-page](images/data-deletion-page.png)
 
-**Check the business case details**
+### Check the business case details
 
 You also can check the `Business Case Details` of this process later by opening it in the Portal.
 
