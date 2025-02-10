@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/databases.json
+Databases:
+  local:
+    Url: jdbc:postgresql://localhost/Test
+    Driver: org.postgresql.Driver
+    UserName: postgres
+    Password: ${decrypt:o59W1a3c+DQIG2SVDWgkOw==}

@@ -1,0 +1,8 @@
+Processes:
+  CreateDummyData:
+    Cases:
+      CustomNumberField:
+        name: Test Case with CustomField as Number {0}
+      CustomStringField:
+        name: Test Case with CustomField as String {0}
+    name: Create Dummy data
