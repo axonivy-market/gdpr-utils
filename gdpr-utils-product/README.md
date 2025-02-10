@@ -1,34 +1,45 @@
 # GDPR Utils
 
-### For the [Data Protection Laws of the World](https://www.dlapiperdataprotection.com), we introduced the GDPR utils.
+The **GDPR (General Data Protection Regulation)** is an EU regulation that governs the protection of personal data within the **EU and EEA**. Key features include an expanded scope, strict consent requirements, data breach notifications, and the **principle of storage limitation**, which mandates that personal data must only be retained as long as necessary for the original purpose. In this context, the **"Right to be Forgotten" (Art. 17 GDPR)** allows individuals to request data deletion when it is no longer needed. To support compliance, this tool  automates the deletion of  data older than a defined time intervall.
 
-* A CronJob has been defined as reminding the responsible for data deletion: A task is created with the option to choose a time interval and delete the user-related data in this time interval by activating the **OK** button (we did not implement this step automatically which would implemented with the case - to guarantee that the responsible is aware of this data deletion step).
-* A couple of variables define to support define which when data can be deleted: i.e., what time interval is the earliest possible, if cases that have not been finished yet should be included, and some others.
 
-* Handling business cases with deleted data: it is shown that the corresponding tasks are destroyed and data deleted.
+- **Create a job that sends reminders to delete data at defined intervals.**  
+- **Define exactly which data should be deleted**, e.g., only data with a certain status. Data related to tasks that are old but still in progress should not be deleted. Also, specify the exact time interval for data deletion.  
+- **Handle business cases involving deleted data**: The business case remains available, but it is indicated that the linked data has been deleted in compliance with GDPR.  
+- **Receive a summary of the deletion process** In our implementation, data deletion is intended to be performed manually to give system administrators control over the process - you get a short report about the number of datasets deleted.
+
+
+
 
 ![data-deletion-page](images/data-deletion-page.png)
 
 ## Demo
 
-### Executing the General Data Protection Regulation process
+### Executing the deletion process
 
-This section creates dummy data for presenting how the `Financial Data` will be deleted.
+This section creates dummy data (`Financial Data`) for demonstrating the deletion process.
 
-* To start the demo, please start `gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp` process.
+* To start the demo,  start `gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp` process.
 * Then start the `gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp` process. It will create a case with the name `General Data Protection Regulation process` and a task will be created and assigned to the `GDPR Administrator` role. You can use the `Developer` account to start this task.
-* The page will look like:
+
+- To start the demo, run the `gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp` process.  
+- Then, run the `gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp` process. This will create a case named **"General Data Protection Regulation process"**, and a task will be generated and assigned to the **GDPR Administrator** role.  
+- You can use the **Developer** account to start this task.  
+- When the GDPR Admin presses the `Submit` button, the data will be **prepared** to be deleted from the database. A confirmation popup will appear to ensure that the action is intentional.
+- The output of the process will look like this.
   
   ![start-data-deletion](images/start-data-deletion.png)
 
-* Then choose the `Financial Year` that you would like to clean up data and press the `Submit` button. One confirm popup will appear to make sure you understand what you do.
-* The output of the process will be looked like:
+
+
+However, the data will only be permanently deleted from the database when the Admin presses the `Finish` button. The output of the process will look like this:  
+
   
   ![data-deletion-page](images/data-deletion-page.png)
 
 ### Check the business case details
 
-You also can check the `Business Case Details` of this process later by opening it in the Portal.
+You  can check the `Business Case Details` of this process later by opening it in the Portal - if data are deleted it is mentioned here. 
 
 ![business-details-page](images/business-details-page.png)
 
