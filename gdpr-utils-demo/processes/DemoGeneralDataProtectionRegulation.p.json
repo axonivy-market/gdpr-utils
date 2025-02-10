@@ -62,7 +62,7 @@
       "name" : "Dummy Task",
       "config" : {
         "task" : {
-          "name" : "Test String task"
+          "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyStringTask/name\")%>"
         }
       },
       "visual" : {
@@ -163,7 +163,7 @@
       "name" : "Dummy Task",
       "config" : {
         "task" : {
-          "name" : "Test Integer task"
+          "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyNumberTask/name\")%>"
         }
       },
       "visual" : {

@@ -21,7 +21,7 @@ Dialogs:
           GeneralDataProtectionRegulationView:
             CaseNumber: Case Number
             TaskNumber: Task Number
-          HelpText: The annual data deletion is required in accordance with the German GDPR regulations.
+          HelpText: The annual data deletion is required in accordance with the GDPR regulations, check the rule <a href="https://www.dlapiperdataprotection.com" target="_blank">here</a>
           PleaseDoNotCloseTask: Please do not close this task while data is still being processed.
           PleaseSelectFinancialYear: Please select Financial Year
           ProcessStatusMessage:

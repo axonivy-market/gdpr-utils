@@ -178,6 +178,9 @@
       "name" : "Trigger",
       "config" : {
         "javaClass" : "ch.ivyteam.ivy.process.eventstart.beans.TimerBean",
+        "userConfig" : {
+          "time" : "ivy.var.get(\"gdpr.DataDeletionCronJobPattern\")"
+        },
         "link" : "eventLink.ivp"
       },
       "visual" : {

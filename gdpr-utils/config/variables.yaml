@@ -1,16 +1,14 @@
-# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
-# == Variables ==
-#
-# You can define here your project Variables.
-# If you want to define/override a Variable for a specific Environment, 
-# add an additional ‘variables.yaml’ file in a subdirectory in the ‘Config’ folder: 
-# '<project>/Config/_<environment>/variables.yaml
-#
 Variables:
   gdpr:
+    # Cronjob pattern for executing once a year on 31. March and creates the Data Deletion task
+    DataDeletionCronJobPattern: 0 0 0 31 3 *
+    # The initial year that the first record was inserted in the database
     InitialFinancialYear: ""
+    # The date that financial year is started
     StartDateFinancialYear: ""
+    # The number that defines at least after that number of years from now then financial years can be selected
     MinRangeAfterEndOfFinancialYear: ""
+    # The maximum of financial years can be show in the data deletion task
     MaxTotalFinancialYearCanBeSelected: ""
     # Case custom fields that should be pick up to procees, each customfield should include name and type
     # [file: json]

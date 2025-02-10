@@ -16,14 +16,16 @@
 					<p:autoUpdate />
 				</p:growl>
 				<div class="card col-12">
-					<h3 class="field col-12">#{ivy.cms.co('/Dialogs/com/axonivy/utils/gdpr/HelpText')}</h3>
+					<h3 class="field col-12">
+						<h:outputText value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/gdpr/HelpText')}" escape="false"/>
+					</h3>
 					<div class="col-12">
 						<p:fieldset legend="#{ivy.cms.co('/Labels/TimePeriod')}">
 							<div class="formgrid grid align-items-start ui-fluid">
 								<h4 class="field col-12">#{ivy.cms.co('/Dialogs/com/axonivy/utils/gdpr/DeletingHelpText')}</h4>
 								<p:outputLabel for="financial-year"
 									value="Please select Financial Year"
-									styleClass="field p-text-left p-text-md-right col-12 md:col-3 mt-2" />
+									styleClass="field p-text-left md:text-right col-12 md:col-3 mt-2" />
 								<div class="field col-12 md:col-6">
 									<p:selectCheckboxMenu id="financial-year"
 										required="#{!financialDataDeletionBean.contentState.readOnly}styles/core.cssstyles/core.css"
