@@ -179,7 +179,7 @@
       "config" : {
         "javaClass" : "ch.ivyteam.ivy.process.eventstart.beans.TimerBean",
         "userConfig" : {
-          "time" : "ivy.var.get(\"gdpr.DataDeletionCronJobPattern\")"
+          "time" : "ivy.var.gdpr_DataDeletionCronJobPattern"
         },
         "link" : "eventLink.ivp"
       },

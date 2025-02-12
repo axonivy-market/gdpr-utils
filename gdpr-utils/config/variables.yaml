@@ -1,7 +1,8 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
 Variables:
   gdpr:
     # Cronjob pattern for executing once a year on 31. March and creates the Data Deletion task
-    DataDeletionCronJobPattern: 0 0 0 31 3 *
+    DataDeletionCronJobPattern: 0 0 31 3 *
     # The initial year that the first record was inserted in the database
     InitialFinancialYear: ""
     # The date that financial year is started
