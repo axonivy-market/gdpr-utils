@@ -2,6 +2,7 @@ package com.axonivy.utils.gdpr.managedbean;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -37,7 +38,8 @@ public class GeneralDataProtectionSummaryBean extends GDPRBusinessDetailsBean im
 	public List<FinancialYear> getFinancialYears() {
 		financialYears = financialDataDeletions.stream()
 				.map(FinancialDataDeletion::getFinancialYears)
-				.flatMap(Collection::stream).toList();
+				.flatMap(Collection::stream)
+				.sorted(Comparator.comparing(FinancialYear::getName)).toList();
 		return financialYears;
 	}
 

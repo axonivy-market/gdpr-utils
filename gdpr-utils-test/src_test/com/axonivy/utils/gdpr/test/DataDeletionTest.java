@@ -6,16 +6,23 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.axonivy.ivy.webtest.engine.WebAppFixture;
 
 @IvyWebTest(headless = true)
 public class DataDeletionTest extends BaseTest {
 
 	private static final String TEST_PROCESS_ID = "gdpr-utils-test/194EF1C2639450F0/";
 	protected static final String CREATE_DUMMY_DATA = "gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp";
+
+	@BeforeAll
+	static void setup(WebAppFixture appFixture) {
+		initDefaultConfig(appFixture);
+	}
 
 	public void createTestData() {
 		// Create dummy task

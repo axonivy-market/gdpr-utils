@@ -1,12 +1,2 @@
 # yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
 Variables:
-  gdpr:
-    InitialFinancialYear: "2020"
-    StartDateFinancialYear: "30/04"
-    MinRangeAfterEndOfFinancialYear: "-1"
-    MaxTotalFinancialYearCanBeSelected: "5"
-    EntityCustomField:
-      Name: entityId
-      # [enum: STRING, NUMBER]
-      Type: STRING
-    PersistenceUnitName: local

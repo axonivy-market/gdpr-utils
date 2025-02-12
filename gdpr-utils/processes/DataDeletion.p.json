@@ -20,6 +20,9 @@
           "role" : "GDPRAdministrator"
         }
       },
+      "tags" : [
+        "utils"
+      ],
       "visual" : {
         "at" : { "x" : 144, "y" : 208 }
       },
@@ -207,6 +210,9 @@
           "isVisibleOnStartList" : false
         }
       },
+      "tags" : [
+        "utils"
+      ],
       "visual" : {
         "at" : { "x" : 144, "y" : 592 }
       },
@@ -254,6 +260,9 @@
           "role" : "GDPRAdministrator"
         }
       },
+      "tags" : [
+        "utils"
+      ],
       "visual" : {
         "at" : { "x" : 144, "y" : 464 }
       },

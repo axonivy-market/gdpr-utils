@@ -8,6 +8,8 @@ import static com.codeborne.selenide.Selenide.open;
 import org.openqa.selenium.By;
 
 import com.axonivy.ivy.webtest.engine.EngineUrl;
+import com.axonivy.ivy.webtest.engine.WebAppFixture;
+import com.axonivy.utils.gdpr.enums.GDPRVariable;
 import com.codeborne.selenide.SelenideElement;
 
 public class BaseTest {
@@ -15,6 +17,16 @@ public class BaseTest {
 	protected static final String DELETE_FORM = "deletion-form:";
 	protected static final String TEST_PROCESS_ID = "gdpr-utils-test/194EF1C2639450F0/";
 	protected static final String MANUAL_TRIGGER_PROCESS = "gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp";
+
+	protected static void initDefaultConfig(WebAppFixture appFixture) {
+		appFixture.var(GDPRVariable.INITIAL_FINANCIAL_YEAR.getVariableName(), "2020");
+		appFixture.var(GDPRVariable.START_DATE_FINANCIAL_YEAR.getVariableName(), "30/04");
+		appFixture.var(GDPRVariable.MIN_RANGE_AFTER_END_OF_FINANCIAL_YEAR.getVariableName(), "-1");
+		appFixture.var(GDPRVariable.MAX_TOTAL_FINANCIAL_YEAR_CAN_BE_SELECTED.getVariableName(), "5");
+		appFixture.var(GDPRVariable.ENTITY_CUSTOM_FIELD_NAME.getVariableName(), "entityId");
+		appFixture.var(GDPRVariable.ENTITY_CUSTOM_FIELD_TYPE.getVariableName(), "STRING");
+		appFixture.var(GDPRVariable.PERSISTENCE_UNIT_NAME.getVariableName(), "local");
+	}
 
 	public void startDataDeletionProcess() {
 		// Manual start Data deletion process

@@ -14,6 +14,9 @@
           "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/name\")%>"
         }
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
@@ -42,6 +45,9 @@
           ]
         }
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 200 },
         "labelOffset" : { "x" : 13, "y" : 33 }
@@ -113,6 +119,9 @@
           ]
         }
       },
+      "tags" : [
+        "demo"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 368 },
         "labelOffset" : { "x" : 13, "y" : 33 }
