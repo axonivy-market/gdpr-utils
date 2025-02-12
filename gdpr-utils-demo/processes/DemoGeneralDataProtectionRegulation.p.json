@@ -24,7 +24,7 @@
       "id" : "f1",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 368, "y" : 64 },
+        "at" : { "x" : 352, "y" : 64 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     }, {
@@ -53,25 +53,9 @@
       "id" : "f4",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 488, "y" : 200 },
+        "at" : { "x" : 672, "y" : 200 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
-    }, {
-      "id" : "f6",
-      "type" : "TaskSwitchEvent",
-      "name" : "Dummy Task",
-      "config" : {
-        "task" : {
-          "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyStringTask/name\")%>"
-        }
-      },
-      "visual" : {
-        "at" : { "x" : 368, "y" : 200 },
-        "labelOffset" : { "x" : 14, "y" : 34 }
-      },
-      "connect" : [
-        { "id" : "f7", "to" : "f4", "color" : "default" }
-      ]
     }, {
       "id" : "f8",
       "type" : "Script",
@@ -112,7 +96,7 @@
         "at" : { "x" : 224, "y" : 200 }
       },
       "connect" : [
-        { "id" : "f11", "to" : "f6", "color" : "default" }
+        { "id" : "f11", "to" : "f15", "color" : "default", "var" : "in1" }
       ]
     }, {
       "id" : "f12",
@@ -130,7 +114,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 96, "y" : 336 },
+        "at" : { "x" : 96, "y" : 368 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       },
       "connect" : [
@@ -152,33 +136,129 @@
         "sudo" : true
       },
       "visual" : {
-        "at" : { "x" : 224, "y" : 336 }
+        "at" : { "x" : 224, "y" : 368 }
       },
       "connect" : [
-        { "id" : "f17", "to" : "f14", "color" : "default" }
+        { "id" : "f14", "to" : "f17", "var" : "in1" }
       ]
     }, {
-      "id" : "f14",
-      "type" : "TaskSwitchEvent",
-      "name" : "Dummy Task",
+      "id" : "f19",
+      "type" : "TaskSwitchGateway",
       "config" : {
-        "task" : {
-          "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyNumberTask/name\")%>"
-        }
+        "tasks" : [ {
+            "id" : "TaskB",
+            "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyStringTask/name\")%>"
+          }, {
+            "id" : "TaskA",
+            "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyStringTask/name\")%>"
+          } ]
       },
       "visual" : {
-        "at" : { "x" : 368, "y" : 336 },
+        "at" : { "x" : 448, "y" : 200 },
         "labelOffset" : { "x" : 14, "y" : 34 }
       },
       "connect" : [
-        { "id" : "f16", "to" : "f15", "color" : "default" }
+        { "id" : "f22", "to" : "f21", "via" : [ { "x" : 448, "y" : 272 } ], "condition" : "ivp==\"TaskB.ivp\"" },
+        { "id" : "f6", "to" : "f4", "condition" : "ivp==\"TaskA.ivp\"" }
+      ]
+    }, {
+      "id" : "f21",
+      "type" : "Script",
+      "name" : "Dummy script",
+      "config" : {
+        "output" : {
+          "code" : "ivy.task.activator = ivy.session.getSessionUser();"
+        },
+        "sudo" : true
+      },
+      "visual" : {
+        "at" : { "x" : 560, "y" : 272 }
+      },
+      "connect" : [
+        { "id" : "f23", "to" : "f4", "via" : [ { "x" : 672, "y" : 272 } ] }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "TaskSwitchGateway",
+      "config" : {
+        "tasks" : [ {
+            "id" : "TaskB",
+            "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyNumberTask/name\")%>"
+          }, {
+            "id" : "TaskA",
+            "name" : "<%=ivy.cms.co(\"/Processes/CreateDummyData/Tasks/DummyNumberTask/name\")%>"
+          } ]
+      },
+      "visual" : {
+        "at" : { "x" : 448, "y" : 368 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f25", "to" : "f24", "via" : [ { "x" : 448, "y" : 440 } ], "condition" : "ivp==\"TaskB.ivp\"" },
+        { "id" : "f27", "to" : "f20", "condition" : "ivp==\"TaskA.ivp\"" }
+      ]
+    }, {
+      "id" : "f20",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 672, "y" : 368 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f24",
+      "type" : "Script",
+      "name" : "Dummy script",
+      "config" : {
+        "output" : {
+          "code" : "ivy.task.activator = ivy.session.getSessionUser();"
+        },
+        "sudo" : true
+      },
+      "visual" : {
+        "at" : { "x" : 560, "y" : 440 }
+      },
+      "connect" : [
+        { "id" : "f26", "to" : "f20", "via" : [ { "x" : 672, "y" : 440 } ] }
       ]
     }, {
       "id" : "f15",
-      "type" : "TaskEnd",
+      "type" : "TaskSwitchEvent",
+      "name" : "System task",
+      "config" : {
+        "task" : {
+          "name" : "Create new data",
+          "responsible" : {
+            "activator" : "SYSTEM"
+          },
+          "skipTasklist" : true
+        }
+      },
       "visual" : {
-        "at" : { "x" : 488, "y" : 336 },
-        "labelOffset" : { "x" : 13, "y" : 33 }
-      }
+        "at" : { "x" : 352, "y" : 200 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f19", "color" : "default", "var" : "in1" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "TaskSwitchEvent",
+      "name" : "System task",
+      "config" : {
+        "task" : {
+          "name" : "Create new data",
+          "responsible" : {
+            "activator" : "SYSTEM"
+          },
+          "skipTasklist" : true
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 352, "y" : 368 },
+        "labelOffset" : { "x" : 14, "y" : 34 }
+      },
+      "connect" : [
+        { "id" : "f28", "to" : "f7", "color" : "default", "var" : "in1" }
+      ]
     } ]
 }

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
+import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.MapperFeature;
@@ -34,8 +35,11 @@ public class JacksonUtils {
 
 	public static ObjectMapper getObjectMapper() {
 		if (objectMapper == null) {
-			objectMapper = JsonMapper.builder().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-					.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS).build();
+			objectMapper = JsonMapper.builder()
+					.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+					.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS)
+					.enable(Feature.ALLOW_COMMENTS)
+					.build();
 		}
 		return objectMapper;
 	}

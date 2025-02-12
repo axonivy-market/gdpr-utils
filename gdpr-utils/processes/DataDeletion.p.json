@@ -208,7 +208,7 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 144, "y" : 480 }
+        "at" : { "x" : 144, "y" : 592 }
       },
       "connect" : [
         { "id" : "f12", "to" : "f2" }
@@ -217,7 +217,7 @@
       "id" : "f8",
       "type" : "TaskEnd",
       "visual" : {
-        "at" : { "x" : 448, "y" : 480 },
+        "at" : { "x" : 448, "y" : 592 },
         "labelOffset" : { "x" : 13, "y" : 33 }
       }
     }, {
@@ -225,7 +225,7 @@
       "type" : "DialogCall",
       "name" : "View Details page",
       "config" : {
-        "dialog" : "com.axonivy.utils.gdpr.GeneralDataProtectionRegulationView:start(String)",
+        "dialog" : "com.axonivy.utils.gdpr.GeneralDataProtectionBusinessCaseDetails:start(String)",
         "call" : {
           "map" : {
             "param.financialDataDeletionId" : "in.financialDataDeletionId"
@@ -233,25 +233,67 @@
         }
       },
       "visual" : {
-        "at" : { "x" : 300, "y" : 481 },
+        "at" : { "x" : 296, "y" : 593 },
         "size" : { "width" : 152, "height" : 62 }
       },
       "connect" : [
         { "id" : "f10", "to" : "f8", "color" : "default" }
+      ]
+    }, {
+      "id" : "f16",
+      "type" : "RequestStart",
+      "name" : "startSummaryPage",
+      "config" : {
+        "signature" : "startSummaryPage",
+        "request" : {
+          "name" : "<%=ivy.cms.co(\"/Processes/DataDeletionSummary/name\")%>",
+          "description" : "<%=ivy.cms.co(\"/Processes/DataDeletionSummary/description\")%>"
+        },
+        "permission" : {
+          "anonymous" : false,
+          "role" : "GDPRAdministrator"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 144, "y" : 464 }
+      },
+      "connect" : [
+        { "id" : "f18", "to" : "f19" }
+      ]
+    }, {
+      "id" : "f17",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 448, "y" : 464 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    }, {
+      "id" : "f19",
+      "type" : "DialogCall",
+      "name" : "Summary page",
+      "config" : {
+        "dialog" : "com.axonivy.utils.gdpr.GeneralDataProtectionSummary:start()"
+      },
+      "visual" : {
+        "at" : { "x" : 296, "y" : 465 },
+        "size" : { "width" : 144, "height" : 62 }
+      },
+      "connect" : [
+        { "id" : "f20", "to" : "f17", "color" : "default" }
       ]
     } ],
   "layout" : {
     "lanes" : [ {
         "name" : "General Data Protection Regulation",
         "offset" : 128,
-        "size" : 440,
+        "size" : 552,
         "lanes" : [ {
             "name" : "Data Deletion",
             "size" : 248,
             "color" : "color1"
           }, {
             "name" : "Business View",
-            "size" : 192,
+            "size" : 304,
             "color" : "color2"
           } ]
       } ],

@@ -1,7 +1,6 @@
 package com.axonivy.utils.gdpr.service;
 
-import static com.axonivy.utils.gdpr.constant.GDPRConstants.COMMA;
-import static com.axonivy.utils.gdpr.constant.GDPRConstants.*;
+import static com.axonivy.utils.gdpr.constant.GDPRConstants.SLASH;
 import static com.axonivy.utils.gdpr.constant.GDPRConstants.ZERO;
 import static com.axonivy.utils.gdpr.enums.CustomField.DATA_DELETED_BY_FY;
 import static com.axonivy.utils.gdpr.service.IvyService.getIntFromVariable;
@@ -116,10 +115,6 @@ public class DataDeletionService {
 		};
 	}
 
-	public boolean isEntityIdListOfSecondDayOnboarding(String entityId) {
-		return StringUtils.isNotBlank(entityId) && entityId.contains(COMMA);
-	}
-
 	public boolean shouldCreateNewCase() {
 		return Sudo.get(() -> {
 			if (hasRunningCase()) {
@@ -171,15 +166,15 @@ public class DataDeletionService {
 		var processedFinancialYears = FinancialDataDeletionService.getInstance().findAllProcessedFinancialYears()
 				.stream().map(FinancialDataDeletion::getFinancialYears).flatMap(List::stream).toList();
 		if (CollectionUtils.isEmpty(processedFinancialYears)) {
-			financialYears = buildLastThreeFinancialYearsFromNow(List.of(), financialYears);
+			financialYears = buildFinancialYearOptionsFromNow(List.of(), financialYears);
 		} else {
 			var processedYears = processedFinancialYears.stream().map(FinancialYear::getYear).map(Long::intValue)
 					.toList();
-			financialYears = buildLastThreeFinancialYearsFromNow(processedYears, financialYears);
+			financialYears = buildFinancialYearOptionsFromNow(processedYears, financialYears);
 		}
 	}
 
-	private List<FinancialYear> buildLastThreeFinancialYearsFromNow(List<Integer> processedYears,
+	private List<FinancialYear> buildFinancialYearOptionsFromNow(List<Integer> processedYears,
 			List<FinancialYear> financialYears) {
 		String startDateFY = getStartDateFinancialYear();
 		int maxTotalFYCanBeSelected = getMaxTotalFinancialYearCanBeSelected();

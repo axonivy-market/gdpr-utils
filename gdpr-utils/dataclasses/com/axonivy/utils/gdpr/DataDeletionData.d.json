@@ -5,14 +5,9 @@
   "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "task",
-    "type" : "com.axonivy.utils.gdpr.model.Task",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.axonivy.utils.gdpr.model.Task"
   }, {
     "name" : "financialDataDeletionId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
-  }, {
-    "name" : "caseId",
     "type" : "String",
     "modifiers" : [ "PERSISTENT" ]
   } ]

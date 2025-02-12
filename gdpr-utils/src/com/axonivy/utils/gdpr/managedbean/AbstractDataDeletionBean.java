@@ -36,7 +36,7 @@ public abstract class AbstractDataDeletionBean {
 		initFinancialDataDeletion();
 	}
 
-	private void initFinancialDataDeletion() {
+	protected void initFinancialDataDeletion() {
 		String requestId = FacesContexts.evaluateValueExpression("#{data.financialDataDeletionId}", String.class);
 		financialDataDeletion = FinancialDataDeletionService.getInstance().findById(requestId);
 		if (financialDataDeletion == null) {

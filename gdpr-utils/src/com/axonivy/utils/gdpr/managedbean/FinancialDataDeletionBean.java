@@ -139,26 +139,28 @@ public class FinancialDataDeletionBean  extends AbstractDataDeletionBean impleme
 			List<FinancialCaseInfo> financialCaseInfoList = new ArrayList<>();
 			financialCases = DataDeletionService.getInstance().queryTop1000CasesByFinancialYear(financialYear);
 			for (var deletedCase : financialCases) {
+				var caseId = deletedCase.getId();
 				var isCaseDestroyed = false;
 				var financialCaseInfo = new FinancialCaseInfo();
 				String entityId = deleteEntitiesOnDB(deletedIds, deletedCase, financialCaseInfo);
+				List<ITask> allTasksOfDeletedCase = getAllTasksOfCase(deletedCase);
+				String deletedTaskId = extractDeletedTaskIds(allTasksOfDeletedCase);
 				if (deletedCase.getState() != CaseState.DONE && deletedCase.getState() != CaseState.DESTROYED) {
-					addNewMessage("/Dialogs/com/axonivy/utils/gdpr/ProcessStatusMessage/DestroyedCase",
-							deletedCase.getId(), deletedCase.getName());
+					var caseName = deletedCase.getName();
+					updateNoteAndCustomfieldForDeletedCase(financialYear.getName(), deletedCase, deletedTaskId);
 					IvyService.destroyCase(deletedCase);
 					isCaseDestroyed = true;
+					addNewMessage("/Dialogs/com/axonivy/utils/gdpr/ProcessStatusMessage/DestroyedCase", caseId,
+							caseName);
 				}
 				if (deletedIds.contains(entityId) || isCaseDestroyed) {
-					List<ITask> allTasksOfDeletedCase = getAllTasksOfCase(deletedCase);
-					String deletedTaskId = extractDeletedTaskIds(allTasksOfDeletedCase);
-					financialCaseInfo.setCaseId(deletedCase.getId());
+					financialCaseInfo.setCaseId(caseId);
 					financialCaseInfo.setTaskNumbers(deletedTaskId);
 					if (StringUtils.isEmpty(financialCaseInfo.getResult())) {
 						financialCaseInfo.setResult(IvyService.translateCms("/Dialogs/com/axonivy/utils/gdpr/ProcessStatusMessage/DataDeleted"));
 					}
 					financialCaseInfoList.add(financialCaseInfo);
 
-					updateNoteAndCustomfieldForDeletedCase(financialYear.getName(), deletedCase, deletedTaskId);
 					// Update count for FY
 					financialYear.setNumberOfTasks(financialYear.getNumberOfTasks() + allTasksOfDeletedCase.size());
 					financialYear.setNumberOfCases(financialYear.getNumberOfCases() + 1);
@@ -201,7 +203,6 @@ public class FinancialDataDeletionBean  extends AbstractDataDeletionBean impleme
 		// Then if found, delete it
 		for (EntityType<?> entityType : configuredEntityTypes) {
 			String entityName = entityType.getName();
-			LOG.warn("GDPR: Processing entity: {0}", entityName);
 			Class<?> entityClass = entityType.getJavaType();
 			Class<?> idClass = entityType.getIdType().getJavaType();
 			if (idClass.isInstance(entityId)) {
@@ -213,7 +214,8 @@ public class FinancialDataDeletionBean  extends AbstractDataDeletionBean impleme
 					var foundEntity = entityManager.find(entityClass, idClass.cast(entityId));
 					if (foundEntity != null) {
 						entityManager.remove(foundEntity);
-						LOG.warn("GDPR: Deleted entity {0} by ID {1}!", entityName, entityId);
+						addNewMessage("/Dialogs/com/axonivy/utils/gdpr/ProcessStatusMessage/DeletingEntity",
+								entityName, entityId);
 						deletedIds.add(String.valueOf(entityId));
 						transaction.commit();
 						break;

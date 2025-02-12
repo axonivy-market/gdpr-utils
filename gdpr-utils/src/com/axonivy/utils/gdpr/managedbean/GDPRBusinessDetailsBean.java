@@ -44,12 +44,12 @@ public class GDPRBusinessDetailsBean extends AbstractDataDeletionBean implements
 			title = finCase.getName();
 		} else {
 			title = IvyService
-					.translateCms("/Processes/DataDeletion/Cases/GeneralDataProtectionRegulation/description");
+					.translateCms("/Processes/DataDeletionSummary/Cases/GeneralDataProtectionSummary/name");
 		}
 		initFilterData();
 	}
 
-	private void initFilterData() {
+	protected void initFilterData() {
 		filterBy = new ArrayList<>();
 		filterBy.add(FilterMeta.builder().field(TASK.getField()).matchMode(MatchMode.CONTAINS).build());
 		filterBy.add(FilterMeta.builder().field(CASE.getField()).matchMode(MatchMode.CONTAINS).build());
@@ -61,7 +61,7 @@ public class GDPRBusinessDetailsBean extends AbstractDataDeletionBean implements
 		return new DataDeletionContentState(DataDeletionState.DATA_DELETION);
 	}
 
-	private void initTargetFinancialYear() {
+	protected void initTargetFinancialYear() {
 		if (CollectionUtils.isNotEmpty(financialYears)) {
 			targetFinancialYear = financialYears.get(0);
 		}
@@ -69,8 +69,9 @@ public class GDPRBusinessDetailsBean extends AbstractDataDeletionBean implements
 	}
 
 	public void refreshTargetFinancialYear() {
-		financialCaseInfos = Optional.ofNullable(targetFinancialYear).map(FinancialYear::getFinancialCaseInfos)
-				.orElse(new ArrayList<FinancialCaseInfo>());
+		financialCaseInfos = new ArrayList<>();
+		financialCaseInfos.addAll(Optional.ofNullable(targetFinancialYear).map(FinancialYear::getFinancialCaseInfos)
+				.orElse(new ArrayList<FinancialCaseInfo>()));
 		taskCounts = Optional.ofNullable(targetFinancialYear).map(FinancialYear::getNumberOfTasks).orElse((long) 0);
 		caseCounts = Optional.ofNullable(targetFinancialYear).map(FinancialYear::getNumberOfCases).orElse((long) 0);
 	}
@@ -129,5 +130,13 @@ public class GDPRBusinessDetailsBean extends AbstractDataDeletionBean implements
 
 	public void setFilterBy(List<FilterMeta> filterBy) {
 		this.filterBy = filterBy;
+	}
+	
+	public List<FinancialYear> getSelectedFinancialYears() {
+		return selectedFinancialYears;
+	}
+
+	public void setSelectedFinancialYears(List<FinancialYear> selectedFinancialYears) {
+		this.selectedFinancialYears = selectedFinancialYears;
 	}
 }

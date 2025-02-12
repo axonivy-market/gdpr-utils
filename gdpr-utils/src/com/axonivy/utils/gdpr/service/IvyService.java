@@ -62,8 +62,9 @@ public class IvyService {
 	}
 
 	public static void destroyCase(ICase iCase) {
-		Sudo.run(() -> {
-			iCase.getBusinessCase().destroy();
+		Sudo.get(() -> {
+			iCase.destroy();
+			return Void.class;
 		});
 	}
 

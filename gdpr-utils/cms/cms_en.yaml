@@ -28,6 +28,7 @@ Dialogs:
             CheckAndDeleteEntities: Checking and deleting entities
             DataDeleted: Data deleted
             DeletedEntitiesInDB: Deleted [{0}] entities in Database
+            DeletingEntity: Deleting {0} {1}
             DestroyedCase: Destroyed case [{0}] {1}
             FindingCasesOfFinancialYear: Finding all cases of financial year {0} from {1} to {2}
             Finished: Finished
@@ -52,9 +53,17 @@ Processes:
       GeneralDataProtectionRegulation:
         description: Deletes user data for GDPR purposes
         name: General Data Protection Regulation process for {0}
+      GeneralDataProtectionSummary:
+        name: General Data Protection Summary
     Tasks:
       GeneralDataProtectionRegulation:
         description: Allows the user to determine dates in which user data must be deleted and deletes it.
         name: General Data Protection Regulation task
     description: Automated process that starts automatically once a year and creates a user task. The user can then determine the dates for which data should be deleted. The data is then deleted by an automatic function.
     name: Manual trigger the General Data Protection Regulation process
+  DataDeletionSummary:
+    Cases:
+      GeneralDataProtectionSummary:
+        name: General Data Protection Summary
+    description: View all deleted data of the General Data Protection Regulation rule
+    name: Data deletion summary

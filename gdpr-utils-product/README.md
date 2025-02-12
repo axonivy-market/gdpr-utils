@@ -19,14 +19,15 @@ The **GDPR (General Data Protection Regulation)** is an EU regulation that gover
 
 This section creates dummy data (`Financial Data`) for demonstrating the deletion process.
 
-* To start the demo,  start `gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp` process.
-* Then start the `gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp` process. It will create a case with the name `General Data Protection Regulation process` and a task will be created and assigned to the `GDPR Administrator` role. You can use the `Developer` account to start this task.
+* First of all, we must persist the demo entity to Database layout by executing `Generate Schema` in the `persistence.xml` editor.
+  
+  ![generate-schema](images/generate-schema.png)
 
-- To start the demo, run the `gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp` process.  
-- Then, run the `gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp` process. This will create a case named **"General Data Protection Regulation process"**, and a task will be generated and assigned to the **GDPR Administrator** role.  
-- You can use the **Developer** account to start this task.  
-- When the GDPR Admin presses the `Submit` button, the data will be **prepared** to be deleted from the database. A confirmation popup will appear to ensure that the action is intentional.
-- The output of the process will look like this.
+* Now, we can create dummy data by running the **Create Dummy data**(`gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp`) process.  
+* Then, run the **Manual trigger the General Data Protection Regulation process**(`gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp`) process. This will create a case named **"General Data Protection Regulation process"**, and a task will be generated and assigned to the **GDPR Administrator** role.  
+* You can use the **Developer** account to start this task.  
+* When the GDPR Admin presses the `Submit` button, the data will be **prepared** to be deleted from the database. A confirmation popup will appear to ensure that the action is intentional.
+* The output of the process will look like this.
   
   ![start-data-deletion](images/start-data-deletion.png)
 

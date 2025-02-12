@@ -3,7 +3,7 @@
   "id" : "194DFA6BF90B08D4",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "com.axonivy.utils.gdpr.GeneralDataProtectionRegulationView.GeneralDataProtectionRegulationViewData"
+    "data" : "com.axonivy.utils.gdpr.GeneralDataProtectionBusinessCaseDetails.GeneralDataProtectionBusinessCaseDetailsData"
   },
   "elements" : [ {
       "id" : "f6",
