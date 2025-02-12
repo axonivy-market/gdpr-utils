@@ -40,7 +40,7 @@ However, the data will only be permanently deleted from the database when the Ad
 
 ### Check the business case details
 
-You  can check the `Business Case Details` of this process later by opening it in the Portal - if data are deleted it is mentioned here. 
+You can check the `Business Case Details` of this process later by starting the **Data deletion summary**(`gdpr-utils/1943EA22591E28D4/startSummaryPage.ivp`) process or opening it in the Portal - if data are deleted it is mentioned here. 
 
 ![business-details-page](images/business-details-page.png)
 
