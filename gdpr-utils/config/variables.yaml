@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/12.0.0/variables.json
+Variables:
+  gdpr:
+    # Cronjob pattern for executing once a year on 31. March and creates the Data Deletion task
+    DataDeletionCronJobPattern: 0 0 31 3 *
+    # The initial year that the first record was inserted in the database
+    InitialFinancialYear: ""
+    # The date that financial year is started
+    StartDateFinancialYear: ""
+    # The number that defines at least after that number of years from now then financial years can be selected
+    MinRangeAfterEndOfFinancialYear: ""
+    # The maximum of financial years can be show in the data deletion task
+    MaxTotalFinancialYearCanBeSelected: ""
+    # In case custom fields need to be selected for processing, each custom field must include a name and type. We can define multiple datasets
+    # [file: json]
+    CustomFieldsInScope: ""
+    EntityCustomField:
+      # The case custom field name that used to save the database entity id
+      Name: ""
+      # The case custom field type that used to save the database entity id
+      # [enum: STRING, NUMBER]
+      Type: ""
+    # The Persistence Unit Name that your application used to define a set of database configurations. It is specified in the persistence.xml file
+    PersistenceUnitName: ""
