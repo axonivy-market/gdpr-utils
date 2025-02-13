@@ -1,7 +1,7 @@
-# MY-PRODUCT-NAME
+# GDPR Utils
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+[![CI Build](https://github.com/axonivy-market/gdpr-utils/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/gdpr-utils/actions/workflows/ci.yml)
 
-"YOUR SHORT DESCRIPTION GOES HERE"
+This tool automates the deletion of data older than a defined time interval to adapt the GDPR (General Data Protection Regulation) rule.
 
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](gdpr-utils-product/README.md).
