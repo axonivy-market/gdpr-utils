@@ -43,7 +43,7 @@ public class DataDeletionService {
 	public static final int PAGE_SIZE = 1000;
 	private static final String FY_PREFIX = "FY";
 	private static final int DEFAULT_MAX_FINANCIAL_YEAR_CAN_BE_SELECTED = 3;
-	private static final String DEFAULT_START_DATE_FINANCIAL_YEAR = "31.01";
+	private static final String DEFAULT_START_DATE_FINANCIAL_YEAR = "31/01";
 
 	private static DataDeletionService instance;
 

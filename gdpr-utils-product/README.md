@@ -8,37 +8,42 @@ The **GDPR (General Data Protection Regulation)** is an EU regulation that gover
 - **Handle business cases involving deleted data**: The business case remains available, but it is indicated that the linked data has been deleted in compliance with GDPR.  
 - **Receive a summary of the deletion process** In our implementation, data deletion is intended to be performed manually to give system administrators control over the process - you get a short report about the number of datasets deleted.
 
-
-
-
 ![data-deletion-page](images/data-deletion-page.png)
 
 ## Demo
 
-### Executing the deletion process
+## 1. Executing the deletion process
 
-This section creates dummy data (`Financial Data`) for demonstrating the deletion process.
+This section creates dummy data (`Financial Data`) for demonstrating the deletion process. The project contains 2 entities class: Company and Employee.
 
-* First of all, we must persist the demo entity to Database layout by executing `Generate Schema` in the `persistence.xml` editor.
-  
+In detail, the Company was designed with an ID type Integer, and Employee was designed as String, so the job will delete one of them based on what you configured in `gdpr.EntityCustomField.Name` variable.
+
+### 1.1 Prepare data
+
+First of all, we must persist the demo entity to Database layout by executing `Generate Schema` in the `persistence.xml` editor. And choose the `create` action.
+
   ![generate-schema](images/generate-schema.png)
 
 * Now, we can create dummy data by running the **Create Dummy data**(`gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp`) process.  
-* Then, run the **Manual trigger the General Data Protection Regulation process**(`gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp`) process. This will create a case named **"General Data Protection Regulation process"**, and a task will be generated and assigned to the **GDPR Administrator** role.  
-* You can use the **Developer** account to start this task.  
+* Then, run the **Manual trigger the General Data Protection Regulation process**(`gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp`) process. It will create a case named **"General Data Protection Regulation process"**, and a task will be generated and assigned to the **GDPR Administrator** role.
+
+### 1.2 General Data Protection Regulation task
+
+You can use the **Developer** account to start the **"General Data Protection Regulation"** task.
+
 * When the GDPR Admin presses the `Submit` button, the data will be **prepared** to be deleted from the database. A confirmation popup will appear to ensure that the action is intentional.
-* The output of the process will look like this.
-  
+
   ![start-data-deletion](images/start-data-deletion.png)
 
-
-
-However, the data will only be permanently deleted from the database when the Admin presses the `Finish` button. The output of the process will look like this:  
-
+However, the data will only be permanently deleted from the database when the Admin presses the `Delete` button.
   
+  ![confirm-delete-dialog](images/confirm-delete-dialog.png)
+
+The output of the process will look like this:
+
   ![data-deletion-page](images/data-deletion-page.png)
 
-### Check the business case details
+## 2. Check the business case details
 
 You can check the `Business Case Details` of this process later by starting the **Data deletion summary**(`gdpr-utils/1943EA22591E28D4/startSummaryPage.ivp`) process or opening it in the Portal - if data are deleted it is mentioned here. 
 
@@ -67,6 +72,7 @@ Read the full variable for more details:
 The `CustomFieldsInScope.json` file can be found in `config/variables/gdpr/CustomFieldsInScope.json`
 
 ```
+    // Sample dataset: [{"name" : "MyKey", "type" : "String", "value" : "MyValue"}]
     [
         {
             "name" : "LegalEntity", // The axonivy case's custom field name that this job should be focused on

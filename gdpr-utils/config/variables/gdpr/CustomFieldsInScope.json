@@ -1,3 +1,4 @@
+// Sample dataset: [{"name" : "MyKey", "type" : "String", "value" : "MyValue"}]
 [
 	{
 		"name" : "LegalEntity", // The axonivy case's custom field name that this job should be focused on
