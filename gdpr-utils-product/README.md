@@ -20,11 +20,7 @@ In detail, the Company was designed with an ID type Integer, and Employee was de
 
 ### 1.1 Prepare data
 
-First of all, we must persist the demo entity to Database layout by executing `Generate Schema` in the `persistence.xml` editor. And choose the `create` action.
-
-  ![generate-schema](images/generate-schema.png)
-
-* Now, we can create dummy data by running the **Create Dummy data**(`gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp`) process.  
+* First of all, we need some dummy data, let's do it by running the **Create Dummy data**(`gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp`) process.
 * Then, run the **Manual trigger the General Data Protection Regulation process**(`gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp`) process. It will create a case named **"General Data Protection Regulation process"**, and a task will be generated and assigned to the **GDPR Administrator** role.
 
 ### 1.2 General Data Protection Regulation task

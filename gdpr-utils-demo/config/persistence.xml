@@ -5,6 +5,10 @@
         <class>com.axonivy.utils.gdpr.demo.entity.Company</class>
         <class>com.axonivy.utils.gdpr.demo.entity.Employee</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
-        <properties/>
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show-sql" value="true"/>
+            <property name="hibernate.id.new_generator_mappings" value="false"/>
+        </properties>
     </persistence-unit>
 </persistence>
