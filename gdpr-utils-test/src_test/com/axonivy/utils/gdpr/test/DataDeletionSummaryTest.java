@@ -24,7 +24,7 @@ public class DataDeletionSummaryTest extends BaseTest {
 	}
 
 	@Test
-	public void canChooseYearToSeeDeleteDataTest() {
+	void canChooseYearToSeeDeleteDataTest() {
 		createDummyData();
 		open(EngineUrl.createProcessUrl(SUMMARY_PROCESS));
 		$(By.id(VIEW_FORM)).shouldBe(visible);
