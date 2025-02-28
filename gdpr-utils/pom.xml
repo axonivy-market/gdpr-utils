@@ -9,15 +9,15 @@
     <project.build.plugin.version>12.0.1</project.build.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <repositories>
-    <repository>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
       <snapshots>
-        <enabled>true</enabled>
+        <updatePolicy>always</updatePolicy>
       </snapshots>
-      <id>maven.axonivy.com</id>
-      <url>https://maven.axonivy.com</url>
-    </repository>
-  </repositories>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
