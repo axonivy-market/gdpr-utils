@@ -95,7 +95,7 @@
           <testFailureIgnore>true</testFailureIgnore>
           <argLine>
             -Dtest.engine.url=${test.engine.url}
-            -Dtest.engine.app=gdprtest
+            -Dtest.engine.app=gdprutilstest
           </argLine>
         </configuration>
       </plugin>
