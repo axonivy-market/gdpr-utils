@@ -12,12 +12,6 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.axonivy.ivy.test</groupId>
-      <artifactId>unit-tester</artifactId>
-      <version>${tester.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.axonivy.ivy.webtest</groupId>
       <artifactId>web-tester</artifactId>
       <version>${tester.version}</version>
@@ -41,11 +35,11 @@
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>sonatype</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
       <snapshots>
         <updatePolicy>always</updatePolicy>
       </snapshots>
+      <id>sonatype</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </pluginRepository>
   </pluginRepositories>
   <build>

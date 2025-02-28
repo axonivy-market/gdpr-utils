@@ -12,7 +12,7 @@ import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.axonivy.ivy.webtest.engine.WebAppFixture;
 
-@IvyWebTest
+@IvyWebTest(headless = true)
 public class DataDeletionSummaryTest extends BaseTest {
 
 	private static final String SUMMARY_PROCESS = "gdpr-utils/1943EA22591E28D4/startSummaryPage.ivp";
