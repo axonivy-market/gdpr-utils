@@ -34,6 +34,7 @@ public class DataDeletionSummaryTest extends BaseTest {
 	}
 
 	private void createDummyData() {
+		loginWithGRDPAdminRole();
 		startDataDeletionProcess();
 		startFirstTaskOfDataDeletionProcess();
 		verifyAndGetFinancialYearDropdown().click();

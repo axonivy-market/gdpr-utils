@@ -79,5 +79,40 @@
       "visual" : {
         "at" : { "x" : 272, "y" : 176 }
       }
+    }, {
+      "id" : "f6",
+      "type" : "RequestStart",
+      "name" : "login",
+      "config" : {
+        "signature" : "login",
+        "input" : {
+          "params" : [
+            { "name" : "username", "type" : "String", "desc" : "" },
+            { "name" : "password", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.password" : "param.password",
+            "out.username" : "param.username"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 304 }
+      },
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
+    }, {
+      "id" : "f7",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : "ivy.session.loginSessionUser(in.username, in.password);"
+        },
+        "sudo" : true
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 304 }
+      }
     } ]
 }
