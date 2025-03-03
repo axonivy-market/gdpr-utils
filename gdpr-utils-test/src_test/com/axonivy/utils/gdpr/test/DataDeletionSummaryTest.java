@@ -26,7 +26,6 @@ public class DataDeletionSummaryTest extends BaseTest {
 	@Test
 	void canChooseYearToSeeDeleteDataTest() {
 		createDummyData();
-		loginWithGRDPAdminRole();
 		open(EngineUrl.createProcessUrl(SUMMARY_PROCESS));
 		$(By.id(VIEW_FORM)).shouldBe(visible);
 		$(By.id(VIEW_FORM + ":financial-year")).shouldBe(visible, enabled);
@@ -35,6 +34,7 @@ public class DataDeletionSummaryTest extends BaseTest {
 	}
 
 	private void createDummyData() {
+		loginWithGRDPAdminRole();
 		startDataDeletionProcess();
 		startFirstTaskOfDataDeletionProcess();
 		verifyAndGetFinancialYearDropdown().click();
