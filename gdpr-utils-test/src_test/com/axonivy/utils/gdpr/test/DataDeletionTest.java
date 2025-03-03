@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import com.axonivy.ivy.webtest.IvyWebTest;
 import com.axonivy.ivy.webtest.engine.EngineUrl;
 import com.axonivy.ivy.webtest.engine.WebAppFixture;
+import com.codeborne.selenide.Selenide;
 
 @IvyWebTest(headless = true)
 public class DataDeletionTest extends BaseTest {
@@ -61,6 +62,7 @@ public class DataDeletionTest extends BaseTest {
 
 		verifyAndGetFinancialYearSelectionPanel();
 		firstOption = verifyAndGetFirstFinOption();
+		Selenide.sleep(3000);
 		assertFalse(clickedIds.contains(firstOption.getText()), "The deleted FIN still show on");
 	}
 
