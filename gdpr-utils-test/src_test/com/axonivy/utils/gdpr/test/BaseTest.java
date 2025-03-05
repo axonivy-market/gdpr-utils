@@ -17,6 +17,7 @@ public class BaseTest {
 	protected static final String DELETE_FORM = "deletion-form:";
 	protected static final String TEST_PROCESS_ID = "gdpr-utils-test/194EF1C2639450F0/";
 	protected static final String MANUAL_TRIGGER_PROCESS = "gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp";
+	protected static final String LOG_IN = "gdpr-utils-test/194EF1C2639450F0/login.ivp?username=test&password=test";
 
 	protected static void initDefaultConfig(WebAppFixture appFixture) {
 		appFixture.var(GDPRVariable.INITIAL_FINANCIAL_YEAR.getVariableName(), "2020");
@@ -73,5 +74,9 @@ public class BaseTest {
 
 	protected SelenideElement verifyAndGetFinishTaskButton() {
 		return $(By.id(DELETE_FORM + "finish-task")).should(visible, enabled);
+	}
+
+	protected void loginWithGRDPAdminRole() {
+		open(EngineUrl.createProcessUrl(LOG_IN));
 	}
 }

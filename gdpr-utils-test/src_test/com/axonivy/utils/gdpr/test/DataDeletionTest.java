@@ -33,6 +33,7 @@ public class DataDeletionTest extends BaseTest {
 	public void canChooseAllYearsAndDeleteDataTest() {
 		cleanUpdata();
 		createTestData();
+		loginWithGRDPAdminRole();
 		startDataDeletionProcess();
 		startFirstTaskOfDataDeletionProcess();
 		verifyAndClickOnFinancialYearDropdown();
