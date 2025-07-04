@@ -27,10 +27,10 @@ public class DataDeletionSummaryTest extends BaseTest {
 	void canChooseYearToSeeDeleteDataTest() {
 		createDummyData();
 		open(EngineUrl.createProcessUrl(SUMMARY_PROCESS));
-		$(By.id(VIEW_FORM)).shouldBe(visible);
-		$(By.id(VIEW_FORM + ":financial-year")).shouldBe(visible, enabled);
-		$(By.id(VIEW_FORM + ":record-table:task-number:filter")).shouldBe(visible, enabled);
-		$(By.id(VIEW_FORM + ":close-button")).shouldBe(visible, enabled);
+		$(By.id(VIEW_FORM)).shouldBe(hidden);
+		$(By.id(VIEW_FORM + ":financial-year")).shouldBe(hidden, disabled);
+		$(By.id(VIEW_FORM + ":record-table:task-number:filter")).shouldBe(hidden, disabled);
+		$(By.id(VIEW_FORM + ":close-button")).shouldBe(hidden, disabled);
 	}
 
 	private void createDummyData() {
