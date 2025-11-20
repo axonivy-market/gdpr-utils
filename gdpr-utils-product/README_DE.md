@@ -1,120 +1,123 @@
 # GDPR Utils
 
-Das **GDPR (Allgemeiner #Daten Schutz Regelung)** ist eine #EU Regelung jener
-regiert den Schutz von persönlich #Daten #innerhalb #der **#EU und EEA**.
-Wesentliche Charakterzüge einschließen #ein expandiert Anwendungsbereich,
-strenge Zusage Forderungen, #Daten Bresche Mitteilungen, und die **Prinzip von
-Speicher Begrenzung**, #welche #mandatieren dass #persönlich #Daten muss nur
-sein festgehalten #solange nötig für den originalen Zweck. In diesem Kontext,
-dem **"Recht zu sein Vergessen" (Kunst. 17 GDPR)** erlaubt Individuen zu
-auffordern #wann #Daten Löschung es ist nicht mehr brauchte. Zu unterstützen
-Zustimmung, dieses Tool automatisiert die Löschung Daten älter als eine
-#abgesteckt Zeit intervall.
+**Die **DSGVO (Datenschutz-Grundverordnung)** ist eine EU-Verordnung, die den
+Schutz personenbezogener Daten innerhalb der **EU und des EWR** regelt. Zu den
+wichtigsten Merkmalen gehören ein erweiterter Anwendungsbereich, strenge
+Einwilligungserfordernisse, Meldungen bei Datenschutzverletzungen und der
+**Grundsatz der Speicherbegrenzung**, der vorschreibt, dass personenbezogene
+Daten nur so lange gespeichert werden dürfen, wie es für den ursprünglichen
+Zweck erforderlich ist. In diesem Zusammenhang ermöglicht das „Recht auf
+Vergessenwerden“ (Art. 17 DSGVO)** Einzelpersonen, die Löschung von Daten zu
+beantragen, wenn diese nicht mehr benötigt werden. Um die Einhaltung der
+Vorschriften zu unterstützen, automatisiert dieses Tool die Löschung von Daten,
+die älter als ein definiertes Zeitintervall sind.
 
 
-- **Schafft einen Beruf jener sendet Winke zu streichen #Daten an #abgesteckt
-  Intervalle.**
-- **Definieren genau #welche Daten sollten sein gestrichen**, #z.B., #einzige
-  #Daten mit einem gewissen Zustand. #Daten erzählt zu beschäftigen jener ist
-  alt aber noch sollte nicht in Fortgang sein gestrichen. Auch, präzisier die
-  exakte Zeit Intervall für Daten Löschung.
-- **Bedienen dienstliche Fälle involvierend gestrichen #Daten**: Der dienstliche
-  Fall #Überreste verfügbar, aber es ist #hindeuten dass die verbunden #Daten
-  hat gewesen gestrichen #entsprechend GDPR.
-- **Empfängt eine Übersicht von den Löschung Arbeitsgang** In unserer
-  Ausführung, #Daten Löschung ist #vorhaben zu sein aufgeführt manuell System
-  Administratoren zu geben Aufsicht über den Arbeitsgang - du bekommst einen
-  kurzen Bericht von die Nummer von datasets strich.
+- **Erstellen Sie einen Job, der in festgelegten Intervallen Erinnerungen zum
+  Löschen von Daten versendet.**
+- **Legen Sie genau fest, welche Daten gelöscht werden sollen**, z. B. nur Daten
+  mit einem bestimmten Status. Daten zu Aufgaben, die alt sind, aber noch in
+  Bearbeitung sind, sollten nicht gelöscht werden. Geben Sie außerdem das genaue
+  Zeitintervall für die Datenlöschung an.
+- **Behandeln Sie Geschäftsfälle mit gelöschten Daten**: Der Geschäftsfalle
+  bleibt verfügbar, es wird jedoch darauf hingewiesen, dass die verknüpften
+  Daten gemäß DSGVO gelöscht wurden.
+- **Erhalten Sie eine Zusammenfassung des Löschvorgangs** In unserer
+  Implementierung soll die Datenlöschung manuell durchgeführt werden, damit
+  Systemadministratoren die Kontrolle über den Vorgang haben – Sie erhalten
+  einen kurzen Bericht über die Anzahl der gelöschten Datensätze.
 
-![#Daten-Löschung-Seite](images/data-deletion-page.png)
+![data-deletion-page](images/data-deletion-page.png)
 
 ## Demo
 
-## 1. Exekutierend den Löschung Arbeitsgang
+## 1. Ausführen des Löschvorgangs
 
-Diese Sektion schafft Dummkopf #Daten (`#Finanziell #Daten`) für demonstrieren
-den Löschung Arbeitsgang. Das Projekt zügelt 2 Entitäten Klasse: Gesellschaft
-und Angestellte.
+In diesem Abschnitt werden Dummy-Daten (`Finanzdaten`) erstellt, um den
+Löschvorgang zu veranschaulichen. Das Projekt enthält zwei Entitätsklassen:
+Unternehmen und Mitarbeiter.
 
-Ausführlich, die Gesellschaft war gestaltet mit eine ID Typ #Ganzzahl, und
-Angestellte war gestaltet da Schnur, so will der Beruf streichen #man von jene
-gegründet auf was du konfiguriertest herein `gdpr.EntityCustomField.Name`
-Variable.
+Im Einzelnen wurde das Unternehmen mit einem ID-Typ Integer und der Mitarbeiter
+als String konfiguriert, sodass der Job einen der beiden basierend auf Ihrer
+Konfiguration in den Variablen „ `gdpr.EntityCustomField.Name” und „` ” löscht.
 
-### 1.1 Bereitet vor #Daten
+### 1.1 Daten vorbereiten
 
-* Zunächst, wir brauchen #einige Dummkopf #Daten, lass uns tun es mal rennen
-  #der **Schafft Dummkopf
-  #Daten**(`gdpr-utils-Demo/1948C6200884AE99/startCreateDummyData.ivp`)
-  Arbeitsgang.
-* Dann, gerannt das **Manuellen Auslöser #der #Allgemein #Daten Schutz Regelung
-  Arbeitsgang**(`gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp`)
-  Arbeitsgang. Es will einen Fall schaffen geheißen **"Allgemeinen #Daten Schutz
-  Regelung Arbeitsgang"**, und ein Task will sein generiert und zugewiesen zu
-  der **GDPR Administrator** Rolle.
+* Zunächst benötigen wir einige Dummy-Daten. Dazu führen wir den Prozess „
+  **Create Dummy data** ”
+  (`gdpr-utils-demo/1948C6200884AE99/startCreateDummyData.ivp`) aus.
+* Führen Sie dann das Handbuch „ **“ aus und lösen Sie den Prozess „General Data
+  Protection Regulation“
+  (**(`gdpr-utils/1943EA22591E28D4/startDataDeletion.ivp`) aus. Dadurch wird ein
+  Fall mit dem Namen „ ** “ („General Data Protection Regulation process“)**
+  erstellt und eine Aufgabe generiert, die der Rolle „ **“ („GDPR
+  Administrator“)** zugewiesen wird.
 
-### 1.2 #Allgemein #Daten Schutz Regelung Task
+### 1.2 Aufgabe gemäß Datenschutz-Grundverordnung
 
-Du kannst benutzen das **Entwickler** verrechnet zu starten den **"Allgemeinen
-#Daten Schutz Regelung"** Task.
+Sie können das Entwicklerkonto „ **“** verwenden, um die Aufgabe „ ** „General
+Data Protection Regulation“** “ zu starten.
 
-* Wann das GDPR Admin Pressen die `Unterziehen` Knopf, #der #Daten will sein
-  **vorbereitet** zu sein gestrichen von der Datenbank. Eine Bestätigung popup
-  will fungieren zu sichern dass die Aktion ist absichtlich.
+* ` Wenn der GDPR-Administrator auf die Schaltfläche „ `“ (Daten aus der
+  Datenbank löschen) klickt, werden die Daten **prepared** aus der Datenbank
+  gelöscht. Es erscheint ein Bestätigungsfenster, um sicherzustellen, dass die
+  Aktion beabsichtigt ist.
 
-  ![Start-Daten-Löschung](images/start-data-deletion.png)
+  ![start-data-deletion](images/start-data-deletion.png)
 
-Indes, #der #Daten will nur permanent sein gestrichen #wann von der Datenbank
-der Admin Pressen die `Streichen` Knopf.
+Die Daten werden jedoch erst dann dauerhaft aus der Datenbank gelöscht, wenn der
+Administrator auf die Schaltfläche „ `“ (Löschen) unter „` “ (Datenbank) klickt.
 
-![Bestätigen-streichen-Zwiegespräch](images/confirm-delete-dialog.png)
+![confirm-delete-dialog](images/confirm-delete-dialog.png)
 
-Die Ausgabe von dem Arbeitsgang will #aussehen dies:
+Das Ergebnis des Prozesses sieht wie folgt aus:
 
-![#Daten-Löschung-Seite](images/data-deletion-page.png)
+![data-deletion-page](images/data-deletion-page.png)
 
-## 2. Überprüf den dienstlichen Fall Details
+## 2. Überprüfen Sie die Details des Business Case.
 
-Du kannst überprüfen das `Dienstliche Fall Details` von diesem Arbeitsgang
-nachher mal starten dem **#Daten Löschung
-Übersicht**(`gdpr-utils/1943EA22591E28D4/startSummaryPage.ivp`) Arbeitsgang oder
-#aufklappend es in dem Portal - ob #Daten ist gestrichen ihm ist erwähnt hier.
+Sie können die Details des Geschäftsfalls „ `”` dieses Prozesses später
+überprüfen, indem Sie den Prozess „
+**”**(`gdpr-utils/1943EA22591E28D4/startSummaryPage.ivp`) starten oder im Portal
+öffnen – wenn Daten gelöscht wurden, wird dies hier erwähnt.
 
-![Geschäft-Details-Seite](images/business-details-page.png)
+![business-details-page](images/business-details-page.png)
 
 ## Einrichtung
 
-Dies util ist gestaltet da ein CronJob, so grundlegend will es sein trigged #man
-misst per Jahr und zuweisen Tasks zu die `GDPR Administrator` Rolle. Du kannst
-geeignet wechseln die Zeit und #wann auch den Anhang den Beruf sollte sein
-ausgelöst mal `gdpr.DataDeletionCronJobPattern` Variable. Herstellung sicher
-jener du weist zu euren Nutzer zu den `GDPR Administrator` Rolle dann können sie
-sehen und arbeiten auf dem Task.
+Dieses Dienstprogramm ist als CronJob konzipiert, sodass es grundsätzlich einmal
+pro Jahr ausgelöst wird und Aufgaben an die Rolle „ `GDPR Administrator”
+(GDPR-Administrator für die Datenlöschung)` zuweist. Sie können den Zeitpunkt
+und auch den Zeitplan, zu dem der Job ausgelöst werden soll, über die Variablen
+„ `gdpr.DataDeletionCronJobPattern” (Zeitpunkt, zu dem der Job ausgelöst werden
+soll)` ändern. Stellen Sie sicher, dass Sie Ihren Benutzer der Rolle „ `GDPR
+Administrator” (GDPR-Administrator für die Datenlöschung)` zuweisen, damit er
+die Aufgabe sehen und bearbeiten kann.
 
-* Der Beruf findet den #entsprechend den Efeu Fälle jenen Wettkampf mit eure
-  config herein `gdpr.CustomFieldsInScope` Datei.
-* Dann das gefunden Efeu Fall und Task will sein zerstört.
-* Für #der #dienstlich #Daten dass eure Antrag speicherte zu die Datenbank
-  Auflage, e.g: postgres DB, Dann musst du config:
-  * Das `gdpr.EntityCustomField` Zu definieren #welche #benutzerdefiniert Feld
-    Namen von den Efeu Fall speicherte jener die Entität Id.
-    * Typ sollte sein `SCHNUR` oder `NUMMER`.
-  * Das `gdpr.PersistenceUnitName` Zu definieren die Beharrlichkeit Einheit
-    heißt jener zügelte alle eure Entitäten, dann kann der Beruf schaffen ein
-    EntityManager basisbezogen auf jenem Namen, und finden mal die Entität id
-    #welche ist gespeichert herein die `gdpr.EntityCustomField`
-    #Benutzerdefiniert Feld.
-    * Du kannst überprüfen das config herein
-      `<your-project>/config/Beharrlichkeit.xml`</your-project>
+* Die Aufgabe besteht darin, die entsprechenden Ivy-Fälle zu finden, die mit
+  Ihrer Konfiguration in der Datei „ `gdpr.CustomFieldsInScope` ”
+  übereinstimmen.
+* Dann werden der gefundene Ivy-Fall und die Aufgabe zerstört.
+* Für die Geschäftsdaten, die Ihre Anwendung in der Datenbankebene gespeichert
+  hat, z. B. in einer Postgres-Datenbank, müssen Sie Folgendes konfigurieren:
+  * Die Datei „ `“ und „gdpr.EntityCustomField“` definieren, welcher
+    benutzerdefinierte Feldname des Ivy-Falls die Entitäts-ID gespeichert hat.
+    * Der Typ sollte `STRING` oder `NUMBER` lauten.
+  * Die Datei „ `“ gdpr.PersistenceUnitName` definiert den Namen der
+    Persistenz-Einheit, die alle Ihre Entitäten enthält. Anschließend kann der
+    Job einen EntityManager basierend auf diesem Namen erstellen und die Entität
+    anhand der ID finden, die in der Datei „ `“ gdpr.EntityCustomField` im
+    benutzerdefinierten Feld gespeichert ist.
+    * Sie können die Konfiguration unter `/config/persistence.xml überprüfen.`
 
-Lies die volle Variable für #mehr Details:
+Weitere Informationen finden Sie in der vollständigen Variablenbeschreibung:
 
 ```
 @variables.yaml@
 ```
 
-Das `CustomFieldsInScope.json` Datei kann sein gefunden herein
-`config/Variablen/gdpr/CustomFieldsInScope.json`
+Die Datei „ `CustomFieldsInScope.json” (` ) finden Sie unter „
+`config/variables/gdpr/CustomFieldsInScope.json”.`
 
 ```
     // Sample dataset: [{"name" : "MyKey", "type" : "String", "value" : "MyValue"}]
