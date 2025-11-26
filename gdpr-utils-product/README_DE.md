@@ -83,7 +83,7 @@ Sie können die Details des Geschäftsfalls „ `”` dieses Prozesses später
 
 ![business-details-page](images/business-details-page.png)
 
-## Einrichtung
+## Setup
 
 Dieses Dienstprogramm ist als CronJob konzipiert, sodass es grundsätzlich einmal
 pro Jahr ausgelöst wird und Aufgaben an die Rolle „ `GDPR Administrator”
