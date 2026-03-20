@@ -14,7 +14,7 @@ Dialogs:
           DeletedCaseNoteMessage: User data deleted from tasks {0} due to German data deletion requirements
           DeletingHelpText: The data from the following period will be deleted.
           DeletionResult:
-            NumberOfCasesProsessed: Number of cases processed
+            NumberOfCasesProcessed: Number of cases processed
             NumberOfTasksProcessed: Number of tasks processed
           DeletionWarningNote: Once you press the submit button, there is no going back, the data will be irrevocably deleted. Please be certain.
           FinancialRange: From {0} to {1}

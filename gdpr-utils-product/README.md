@@ -1,6 +1,6 @@
 # GDPR Utils
 
-The **GDPR (General Data Protection Regulation)** is an EU regulation that governs the protection of personal data within the **EU and EEA**. Key features include an expanded scope, strict consent requirements, data breach notifications, and the **principle of storage limitation**, which mandates that personal data must only be retained as long as necessary for the original purpose. In this context, the **"Right to be Forgotten" (Art. 17 GDPR)** allows individuals to request data deletion when it is no longer needed. To support compliance, this tool  automates the deletion of  data older than a defined time intervall.
+The **GDPR (General Data Protection Regulation)** is an EU regulation that governs the protection of personal data within the **EU and EEA**. Key features include an expanded scope, strict consent requirements, data breach notifications, and the **principle of storage limitation**, which mandates that personal data must only be retained as long as necessary for the original purpose. In this context, the **"Right to be Forgotten" (Art. 17 GDPR)** allows individuals to request data deletion when it is no longer needed. To support compliance, this tool  automates the deletion of  data older than a defined time interval.
 
 
 - **Create a job that sends reminders to delete data at defined intervals.**  
@@ -47,7 +47,7 @@ You can check the `Business Case Details` of this process later by starting the 
 
 ## Setup
 
-This util is designed as a CronJob, so basically it will be trigged one time per year and assign tasks to the `GDPR Administrator` role.
+This util is designed as a CronJob, so basically it will be triggered one time per year and assign tasks to the `GDPR Administrator` role.
 You properly can change the time and also the schedule when the job should be triggered by `gdpr.DataDeletionCronJobPattern` variable.
 Make sure that you assign your user to the `GDPR Administrator` role then they can see and work on the task.
 
