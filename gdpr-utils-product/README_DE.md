@@ -1,16 +1,14 @@
 # GDPR Utils
 
-**Die **DSGVO (Datenschutz-Grundverordnung)** ist eine EU-Verordnung, die den
-Schutz personenbezogener Daten innerhalb der **EU und des EWR** regelt. Zu den
-wichtigsten Merkmalen gehören ein erweiterter Anwendungsbereich, strenge
-Einwilligungserfordernisse, Meldungen bei Datenschutzverletzungen und der
-**Grundsatz der Speicherbegrenzung**, der vorschreibt, dass personenbezogene
-Daten nur so lange gespeichert werden dürfen, wie es für den ursprünglichen
-Zweck erforderlich ist. In diesem Zusammenhang ermöglicht das „Recht auf
-Vergessenwerden“ (Art. 17 DSGVO)** Einzelpersonen, die Löschung von Daten zu
-beantragen, wenn diese nicht mehr benötigt werden. Um die Einhaltung der
-Vorschriften zu unterstützen, automatisiert dieses Tool die Löschung von Daten,
-die älter als ein definiertes Zeitintervall sind.
+The **GDPR (General Data Protection Regulation)** is an EU regulation that
+governs the protection of personal data within the **EU and EEA**. Key features
+include an expanded scope, strict consent requirements, data breach
+notifications, and the **principle of storage limitation**, which mandates that
+personal data must only be retained as long as necessary for the original
+purpose. In this context, the **"Right to be Forgotten" (Art. 17 GDPR)** allows
+individuals to request data deletion when it is no longer needed. To support
+compliance, this tool automates the deletion of data older than a defined time
+interval.
 
 
 - **Erstellen Sie einen Job, der in festgelegten Intervallen Erinnerungen zum
@@ -85,14 +83,11 @@ Sie können die Details des Geschäftsfalls „ `”` dieses Prozesses später
 
 ## Setup
 
-Dieses Dienstprogramm ist als CronJob konzipiert, sodass es grundsätzlich einmal
-pro Jahr ausgelöst wird und Aufgaben an die Rolle „ `GDPR Administrator”
-(GDPR-Administrator für die Datenlöschung)` zuweist. Sie können den Zeitpunkt
-und auch den Zeitplan, zu dem der Job ausgelöst werden soll, über die Variablen
-„ `gdpr.DataDeletionCronJobPattern” (Zeitpunkt, zu dem der Job ausgelöst werden
-soll)` ändern. Stellen Sie sicher, dass Sie Ihren Benutzer der Rolle „ `GDPR
-Administrator” (GDPR-Administrator für die Datenlöschung)` zuweisen, damit er
-die Aufgabe sehen und bearbeiten kann.
+This util is designed as a CronJob, so basically it will be triggered one time
+per year and assign tasks to the `GDPR Administrator` role. You properly can
+change the time and also the schedule when the job should be triggered by
+`gdpr.DataDeletionCronJobPattern` variable. Make sure that you assign your user
+to the `GDPR Administrator` role then they can see and work on the task.
 
 * Die Aufgabe besteht darin, die entsprechenden Ivy-Fälle zu finden, die mit
   Ihrer Konfiguration in der Datei „ `gdpr.CustomFieldsInScope` ”
@@ -120,7 +115,7 @@ Die Datei „ `CustomFieldsInScope.json” (` ) finden Sie unter „
 `config/variables/gdpr/CustomFieldsInScope.json”.`
 
 ```
-    // Sample dataset: [{"name" : "MyKey", "type" : "String", "value" : "MyValue"}]
+// Sample dataset: [{"name" : "MyKey", "type" : "String", "value" : "MyValue"}]
     [
         {
             "name" : "LegalEntity", // The axonivy case's custom field name that this job should be focused on
