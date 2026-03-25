@@ -9,14 +9,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<modules>
-		<module>${project.name}</module>
-		<module>${project.name}-demo</module>
-		<module>${project.name}-test</module>
-		<module>${project.name}-product</module>
+		<module>gdpr-utils</module>
+		<module>gdpr-utils-demo</module>
+		<module>gdpr-utils-test</module>
+		<module>gdpr-utils-product</module>
 	</modules>
 
 	<scm>
-		<developerConnection>scm:git:https://github.com/axonivy-market/${project.name}.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/axonivy-market/gdpr-utils.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
