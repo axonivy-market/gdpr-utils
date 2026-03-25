@@ -55,10 +55,10 @@
 								<h:panelGroup id="financial-year-info"
 									styleClass="field col-12 md:col-8 p-text-left">
 									<div class="col-12">
-										<ui:repeat var="seletedFY"
+										<ui:repeat var="selectedFY"
 											value="#{financialDataDeletionBean.selectedFinancialYears}">
 											<li><h:outputText
-													value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/gdpr/FinancialRange', [seletedFY.startFY, seletedFY.endFY])}" />
+													value="#{ivy.cms.co('/Dialogs/com/axonivy/utils/gdpr/FinancialRange', [selectedFY.startFY, selectedFY.endFY])}" />
 											</li>
 										</ui:repeat>
 									</div>
