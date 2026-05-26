@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/persistence-2.json
+Persistence:
+  local:
+    DataSource: local
+    Managed:
+      Mode: LISTED_ONLY
+      Classes:
+        - com.axonivy.utils.gdpr.demo.entity.Company
+        - com.axonivy.utils.gdpr.demo.entity.Employee
+    Properties:
+      hibernate.show-sql: 'true'
+      hibernate.hbm2ddl.auto: create-drop
+      hibernate.id.new_generator_mappings: 'false'
