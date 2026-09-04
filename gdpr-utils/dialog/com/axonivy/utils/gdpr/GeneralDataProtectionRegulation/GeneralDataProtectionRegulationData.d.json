@@ -3,6 +3,7 @@
   "simpleName" : "GeneralDataProtectionRegulationData",
   "namespace" : "com.axonivy.utils.gdpr.GeneralDataProtectionRegulation",
   "fields" : [ {
-    "name" : "financialDataDeletionId"
+    "name" : "financialDataDeletionId",
+    "modifiers" : [ ]
   } ]
 }
