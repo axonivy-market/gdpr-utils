@@ -5,16 +5,16 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 import com.axonivy.utils.gdpr.persistence.entities.FinancialDataDeletion;
 import com.axonivy.utils.gdpr.persistence.entities.FinancialYear;
 import com.axonivy.utils.gdpr.persistence.service.FinancialDataDeletionService;
 import com.axonivy.utils.gdpr.service.IvyService;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class GeneralDataProtectionSummaryBean extends GDPRBusinessDetailsBean implements Serializable {
 	private static final long serialVersionUID = 1L;

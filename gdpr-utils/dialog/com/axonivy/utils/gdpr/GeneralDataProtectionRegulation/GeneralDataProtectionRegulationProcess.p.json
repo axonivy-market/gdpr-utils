@@ -1,12 +1,12 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
-  "id" : "194DFA6BF90B08D4",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "19486DBA31778F3A",
   "kind" : "HTML_DIALOG",
   "config" : {
-    "data" : "com.axonivy.utils.gdpr.GeneralDataProtectionBusinessCaseDetails.GeneralDataProtectionBusinessCaseDetailsData"
+    "data" : "com.axonivy.utils.gdpr.GeneralDataProtectionRegulation.GeneralDataProtectionRegulationData"
   },
   "elements" : [ {
-      "id" : "f6",
+      "id" : "f0",
       "type" : "HtmlDialogStart",
       "name" : "start(String)",
       "config" : {
@@ -19,41 +19,41 @@
             "out.financialDataDeletionId" : "param.financialDataDeletionId"
           }
         },
-        "guid" : "194DFA780CEF89AC"
+        "guid" : "19486DBA31974DF6"
       },
       "visual" : {
-        "at" : { "x" : 144, "y" : 336 }
+        "at" : { "x" : 96, "y" : 64 }
       },
       "connect" : [
-        { "id" : "f11", "to" : "f7" }
+        { "id" : "f2", "to" : "f1" }
       ]
     }, {
-      "id" : "f7",
+      "id" : "f1",
       "type" : "HtmlDialogEnd",
       "visual" : {
-        "at" : { "x" : 272, "y" : 336 },
+        "at" : { "x" : 224, "y" : 64 },
         "labelOffset" : { "x" : 10, "y" : 30 }
       }
     }, {
-      "id" : "f8",
+      "id" : "f4",
       "type" : "HtmlDialogExit",
       "visual" : {
-        "at" : { "x" : 272, "y" : 432 },
+        "at" : { "x" : 224, "y" : 160 },
         "labelOffset" : { "x" : 10, "y" : 30 }
       }
     }, {
-      "id" : "f9",
+      "id" : "f6",
       "type" : "HtmlDialogMethodStart",
       "name" : "close()",
       "config" : {
         "signature" : "close",
-        "guid" : "194DFA780CE18670"
+        "guid" : "1948BFCD661D1BC0"
       },
       "visual" : {
-        "at" : { "x" : 144, "y" : 432 }
+        "at" : { "x" : 96, "y" : 160 }
       },
       "connect" : [
-        { "id" : "f10", "to" : "f8" }
+        { "id" : "f7", "to" : "f4" }
       ]
     } ]
 }

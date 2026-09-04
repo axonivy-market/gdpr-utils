@@ -3,6 +3,7 @@
   "simpleName" : "GeneralDataProtectionBusinessCaseDetailsData",
   "namespace" : "com.axonivy.utils.gdpr.GeneralDataProtectionBusinessCaseDetails",
   "fields" : [ {
-    "name" : "financialDataDeletionId"
+    "name" : "financialDataDeletionId",
+    "modifiers" : [ ]
   } ]
 }
