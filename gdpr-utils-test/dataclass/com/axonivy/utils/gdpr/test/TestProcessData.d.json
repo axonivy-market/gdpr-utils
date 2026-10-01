@@ -1,0 +1,10 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "TestProcessData",
+  "namespace" : "com.axonivy.utils.gdpr.test",
+  "fields" : [ {
+    "name" : "username"
+  }, {
+    "name" : "password"
+  } ]
+}

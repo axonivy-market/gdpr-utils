@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import jakarta.transaction.TransactionRolledbackException;
@@ -38,7 +38,7 @@ import ch.ivyteam.ivy.workflow.ICase;
 import ch.ivyteam.ivy.workflow.ITask;
 import ch.ivyteam.log.Logger;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class FinancialDataDeletionBean  extends AbstractDataDeletionBean implements Serializable {
 	private static final long serialVersionUID = 1L;

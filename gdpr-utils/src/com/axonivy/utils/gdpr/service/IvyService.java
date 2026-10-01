@@ -17,7 +17,7 @@ import com.axonivy.utils.gdpr.constant.GDPRConstants;
 import com.axonivy.utils.gdpr.enums.GDPRVariable;
 
 import ch.ivyteam.ivy.application.ActivityState;
-import ch.ivyteam.ivy.application.IApplication;
+import ch.ivyteam.ivy.application.app.Application;
 import ch.ivyteam.ivy.application.IProcessModelVersion;
 import ch.ivyteam.ivy.application.app.IApplicationRepository;
 import ch.ivyteam.ivy.environment.Ivy;
@@ -83,9 +83,9 @@ public class IvyService {
 
 	public static EntityManager getConfiguredEntityManager() {
 		EntityManager entityManager = null;
-		List<IApplication> appsInCurrentSecurityContext = IApplicationRepository.of(ISecurityContext.current()).all();
+		List<Application> appsInCurrentSecurityContext = IApplicationRepository.of(ISecurityContext.current()).all();
 		var activePMVs = appsInCurrentSecurityContext.stream()
-				.map(IApplication::getProcessModelVersions).flatMap(Stream::distinct)
+				.map(Application::getProcessModelVersions).flatMap(Stream::distinct)
 				.filter(pmv -> pmv.getActivityState() == ActivityState.ACTIVE)
 				.filter(pmv -> !pmv.getProjectName().equals(DEFAULT_PROJECT_ID)).toList();
 		for (var pmv : activePMVs) {

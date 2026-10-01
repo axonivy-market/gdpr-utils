@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.primefaces.model.FilterMeta;
@@ -21,7 +21,7 @@ import com.axonivy.utils.gdpr.service.IvyService;
 import static com.axonivy.utils.gdpr.enums.FilterColumn.*;
 import ch.ivyteam.ivy.workflow.ICase;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class GDPRBusinessDetailsBean extends AbstractDataDeletionBean implements Serializable {
 	private static final long serialVersionUID = 1L;
